@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="ml_capability_definition_similarity">
+    <ml_capability_definition_similarity action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <capability display_value="Similarity">15ab7f3c53873300d1dcddeeff7b12ce</capability>
+        <current_solution_version>15</current_solution_version>
+        <dataset_language>en</dataset_language>
+        <fields>body</fields>
+        <filter/>
+        <request_source>ui</request_source>
+        <solution_label>Assessment Questions</solution_label>
+        <solution_name>ml_x_463716_x_463716_dlh_global_assessment_questions</solution_name>
+        <solution_parameters/>
+        <solution_properties/>
+        <stopwords>a6282a25533333008c5bddeeff7b12c3</stopwords>
+        <sys_class_name>ml_capability_definition_similarity</sys_class_name>
+        <sys_created_by>zdravko.verguilov</sys_created_by>
+        <sys_created_on>2021-11-04 11:18:39</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f7227f2e0727f010d44bf16c7c1ed0bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Assessment Questions</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>ml_capability_definition_similarity_f7227f2e0727f010d44bf16c7c1ed0bd</sys_update_name>
+        <sys_updated_by>zdravko.verguilov</sys_updated_by>
+        <sys_updated_on>2021-11-04 11:18:39</sys_updated_on>
+        <table>x_463716_dlh_question</table>
+        <test_fields>body</test_fields>
+        <test_table>x_463716_dlh_question</test_table>
+        <threshold>80</threshold>
+        <training_frequency>every_30_days</training_frequency>
+        <update_frequency>do_not_update</update_frequency>
+        <word_vector_corpus display_value="Question">a352336e0727f010d44bf16c7c1ed03b</word_vector_corpus>
+    </ml_capability_definition_similarity>
+</record_update>

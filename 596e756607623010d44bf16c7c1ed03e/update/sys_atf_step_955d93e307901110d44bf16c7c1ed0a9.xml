@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Navigate to the 'My PDP' module in the 'PDP' application</description>
+        <display_name>Navigate to Module</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes>Open My PDP</notes>
+        <order>3</order>
+        <snapshot/>
+        <step_config display_value="Navigate to Module">c832fc4073720300c79260bdfaf6a7a0</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-07-01 15:16:23</sys_created_on>
+        <sys_id>955d93e307901110d44bf16c7c1ed0a9</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Navigate to Module</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_atf_step_955d93e307901110d44bf16c7c1ed0a9</sys_update_name>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-07-04 11:19:07</sys_updated_on>
+        <table>x_463716_dlh_pdp</table>
+        <test display_value="Test PDP initial creation">3e8bd3e307901110d44bf16c7c1ed072</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=955d93e307901110d44bf16c7c1ed0a9"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>955d93e307901110d44bf16c7c1ed0a9</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-07-01 15:16:24</sys_created_on>
+        <sys_id>4c8d5b2707901110d44bf16c7c1ed082</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-07-01 15:16:24</sys_updated_on>
+        <value>55de398307e30110d44bf16c7c1ed06e</value>
+        <variable display_value="Module">b6d2b40c73720300c79260bdfaf6a786</variable>
+    </sys_variable_value>
+</record_update>

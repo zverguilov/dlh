@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-06-02 11:09:18</sys_created_on>
+        <sys_id>adde4592073f0910d44bf16c7c1ed02a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>x_463716_dlh_pdp.employee.x_463716_dlh.manager</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_security_acl display_value="x_463716_dlh_pd_task.employee">a5de4592073f0910d44bf16c7c1ed029</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_adde4592073f0910d44bf16c7c1ed02a</sys_update_name>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-06-02 11:09:46</sys_updated_on>
+        <sys_user_role display_value="x_463716_dlh.manager" name="x_463716_dlh.manager">79abbd7f0732c110d44bf16c7c1ed0c2</sys_user_role>
+        <transaction_id>a1de8152073f0910d44bf16c7c1ed04a</transaction_id>
+    </sys_security_acl_role>
+</record_update>

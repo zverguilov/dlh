@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" label="PD Goal" max_length="40" name="x_463716_dlh_pd_goal" sizeclass="59" type="collection">
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Actually acquired skills" max_length="4000" name="actually_acquired_skills" reference="cmn_skill" reference_qual="javascript:'sys_idIN'+current.skills_to_acquire" type="glide_list" use_reference_qualifier="advanced"/>
+        <element label="Blocked" max_length="40" name="blocked" type="boolean"/>
+        <element label="Blocked reason" max_length="65536" name="blocked_reason" type="string"/>
+        <element label="Development Plan" max_length="32" name="development_plan" read_only="true" reference="x_463716_dlh_pdp" type="reference"/>
+        <element choice="1" label="Goal subtype" max_length="40" name="goal_subtype" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Certification" sequence="100" value="certification"/>
+                <element inactive_on_update="false" label="Training" sequence="200" value="training"/>
+                <element inactive_on_update="false" label="Other skills" sequence="300" value="other_skills"/>
+            </choice>
+        </element>
+        <element choice="1" label="Goal type" max_length="40" name="goal_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Mentoring" sequence="100" value="mentoring"/>
+                <element inactive_on_update="false" label="Self-improvement" sequence="200" value="self_improvement"/>
+                <element inactive_on_update="false" label="Project" sequence="300" value="project"/>
+                <element inactive_on_update="false" label="KPIs/Metrics" sequence="400" value="kpi_metric"/>
+                <element inactive_on_update="false" label="Other" sequence="500" value="other"/>
+            </choice>
+        </element>
+        <element calculation="(function calculatedFieldValue(current) {&#13;&#10;&#13;&#10;&#9;// Add your code here&#13;&#10;&#9;return '';  // return the calculated value&#13;&#10;&#13;&#10;})(current);" label="Skills to acquire" mandatory="true" max_length="4000" name="skills_to_acquire" reference="cmn_skill" type="glide_list"/>
+        <element label="Support needed" max_length="300" name="support_needed" type="string"/>
+    </element>
+</database>

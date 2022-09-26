@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="goal_type" label="Goal type" language="en" table="x_463716_dlh_pd_goal">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>goal_type</element>
+            <help/>
+            <hint/>
+            <label>Goal type</label>
+            <language>en</language>
+            <name>x_463716_dlh_pd_goal</name>
+            <plural>Goal types</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>teodora.radeva</sys_created_by>
+            <sys_created_on>2022-03-29 08:32:03</sys_created_on>
+            <sys_id>a08b7d19072e4110d44bf16c7c1ed0cb</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Goal type</sys_name>
+            <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+            <sys_update_name>sys_documentation_x_463716_dlh_pd_goal_goal_type_en</sys_update_name>
+            <sys_updated_by>teodora.radeva</sys_updated_by>
+            <sys_updated_on>2022-03-29 08:32:03</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

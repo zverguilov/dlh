@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sysevent_email_action">
+    <sysevent_email_action action="INSERT_OR_UPDATE">
+        <action_insert>false</action_insert>
+        <action_update>true</action_update>
+        <active>true</active>
+        <advanced_condition/>
+        <affected_field_on_event/>
+        <category display_value="Uncategorized" name="Uncategorized">c97d83137f4432005f58108c3ffa917a</category>
+        <collection>x_463716_dlh_pd_goal</collection>
+        <condition table="x_463716_dlh_pd_goal">commentsVALCHANGES^EQ<item endquery="false" field="comments" goto="false" newquery="false" operator="VALCHANGES" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <content_type>text/html</content_type>
+        <default_interval/>
+        <description/>
+        <digest_from/>
+        <digest_html/>
+        <digest_reply_to/>
+        <digest_separator_html><![CDATA[<p><br /></p>
+<hr />
+<p><br /></p>]]></digest_separator_html>
+        <digest_separator_text><![CDATA[\n--------------------------------------------------------------------------------\n]]></digest_separator_text>
+        <digest_subject/>
+        <digest_template/>
+        <digest_text/>
+        <digestable>false</digestable>
+        <event_name>sc_req_item.commented</event_name>
+        <event_parm_1>false</event_parm_1>
+        <event_parm_2>false</event_parm_2>
+        <exclude_delegates>false</exclude_delegates>
+        <force_delivery>false</force_delivery>
+        <from/>
+        <generation_type>engine</generation_type>
+        <importance/>
+        <include_attachments>false</include_attachments>
+        <item>event.parm1</item>
+        <item_table/>
+        <mandatory>false</mandatory>
+        <message/>
+        <message_html><![CDATA[<p>This goals ${number} has been commented by:&nbsp;Updated by: ${sys_updated_by}<br /></p>]]></message_html>
+        <message_list/>
+        <message_text/>
+        <name>Goal Commented</name>
+        <omit_watermark>false</omit_watermark>
+        <order>100</order>
+        <push_message_only>false</push_message_only>
+        <recipient_fields>assigned_to</recipient_fields>
+        <recipient_groups/>
+        <recipient_users/>
+        <reply_to/>
+        <send_self>false</send_self>
+        <sms_alternate/>
+        <style/>
+        <subject>Goal with number ${number} has been commented</subject>
+        <subscribable>false</subscribable>
+        <sys_class_name>sysevent_email_action</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-06-02 08:43:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3a6dac5a077b0910d44bf16c7c1ed048</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Goal Commented</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sysevent_email_action_3a6dac5a077b0910d44bf16c7c1ed048</sys_update_name>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-06-02 08:52:51</sys_updated_on>
+        <sys_version>2</sys_version>
+        <template/>
+        <type>email</type>
+        <weight>10</weight>
+    </sysevent_email_action>
+</record_update>

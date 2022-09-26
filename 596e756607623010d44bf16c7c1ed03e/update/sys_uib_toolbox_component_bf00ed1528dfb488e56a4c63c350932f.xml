@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_uib_toolbox_component">
+    <sys_uib_toolbox_component action="INSERT_OR_UPDATE">
+        <description>A description of my component</description>
+        <external_configuration_sources/>
+        <icon>document-outline</icon>
+        <label>My Component</label>
+        <macroponent display_value="My Component">773a625f75552cb95e1576cd591092b2</macroponent>
+        <sys_class_name>sys_uib_toolbox_component</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-15 13:35:01</sys_created_on>
+        <sys_id>bf00ed1528dfb488e56a4c63c350932f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>My Component</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_uib_toolbox_component_bf00ed1528dfb488e56a4c63c350932f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-15 13:35:01</sys_updated_on>
+    </sys_uib_toolbox_component>
+    <sys_translated_text action="delete_multiple" query="documentkey=bf00ed1528dfb488e56a4c63c350932f"/>
+</record_update>

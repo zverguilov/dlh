@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Open a new 'PDP' form</description>
+        <display_name>Open a New Form</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes>Create new PDP record</notes>
+        <order>4</order>
+        <snapshot/>
+        <step_config display_value="Open a New Form">05317cd10b10220050192f15d6673af8</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-07-01 15:17:40</sys_created_on>
+        <sys_id>7dad9f2707901110d44bf16c7c1ed096</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Open a New Form</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_atf_step_7dad9f2707901110d44bf16c7c1ed096</sys_update_name>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-07-04 11:19:06</sys_updated_on>
+        <table>x_463716_dlh_pdp</table>
+        <test display_value="Test PDP initial creation">3e8bd3e307901110d44bf16c7c1ed072</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=7dad9f2707901110d44bf16c7c1ed096"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>7dad9f2707901110d44bf16c7c1ed096</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-07-01 15:17:40</sys_created_on>
+        <sys_id>72cd9f2707901110d44bf16c7c1ed0a2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-07-01 15:17:40</sys_updated_on>
+        <value>x_463716_dlh_pdp</value>
+        <variable display_value="Table">bb84ed825320220002c6435723dc3400</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>7dad9f2707901110d44bf16c7c1ed096</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-07-01 15:17:40</sys_created_on>
+        <sys_id>bacd9f2707901110d44bf16c7c1ed0a1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-07-01 15:17:40</sys_updated_on>
+        <value>standard_ui</value>
+        <variable display_value="Form UI">6f2a59a4e7133300b5646ea8c2f6a975</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>7dad9f2707901110d44bf16c7c1ed096</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-07-01 15:17:40</sys_created_on>
+        <sys_id>becd9f2707901110d44bf16c7c1ed0a1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-07-01 15:17:40</sys_updated_on>
+        <value/>
+        <variable display_value="View">27d4e1c25320220002c6435723dc3486</variable>
+    </sys_variable_value>
+</record_update>

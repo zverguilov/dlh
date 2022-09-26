@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Confirm that at least the following modules are visible: My PDP</description>
+        <display_name>Module Visibility</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes>PDP app module is visible</notes>
+        <order>2</order>
+        <snapshot/>
+        <step_config display_value="Module Visibility">f7cfc1973702030064a52f3c8e41f1d3</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-07-01 15:15:17</sys_created_on>
+        <sys_id>6cac532707901110d44bf16c7c1ed019</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Module Visibility</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_atf_step_6cac532707901110d44bf16c7c1ed019</sys_update_name>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-08-17 09:24:34</sys_updated_on>
+        <table/>
+        <test display_value="Test PDP initial creation">3e8bd3e307901110d44bf16c7c1ed072</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=6cac532707901110d44bf16c7c1ed019"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>6cac532707901110d44bf16c7c1ed019</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-07-01 15:15:18</sys_created_on>
+        <sys_id>773d5b2707901110d44bf16c7c1ed066</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-08-17 09:24:35</sys_updated_on>
+        <value>55de398307e30110d44bf16c7c1ed06e</value>
+        <variable display_value="Visible modules">4a3319d73702030064a52f3c8e41f1a9</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>6cac532707901110d44bf16c7c1ed019</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-07-01 15:15:18</sys_created_on>
+        <sys_id>b33d5b2707901110d44bf16c7c1ed066</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-07-01 15:15:18</sys_updated_on>
+        <value/>
+        <variable display_value="Not visible modules">932d14a33756030064a52f3c8e41f120</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>6cac532707901110d44bf16c7c1ed019</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-07-01 15:15:18</sys_created_on>
+        <sys_id>b73d5b2707901110d44bf16c7c1ed065</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-07-01 15:15:18</sys_updated_on>
+        <value>at_least_modules_visible</value>
+        <variable display_value="Visible assert type">90749dd73702030064a52f3c8e41f12d</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>6cac532707901110d44bf16c7c1ed019</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-07-01 15:15:18</sys_created_on>
+        <sys_id>ff3d5b2707901110d44bf16c7c1ed065</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-07-01 15:15:18</sys_updated_on>
+        <value>at_least_modules_not_visible</value>
+        <variable display_value="Not visible assert type">8570e0e33756030064a52f3c8e41f16c</variable>
+    </sys_variable_value>
+</record_update>

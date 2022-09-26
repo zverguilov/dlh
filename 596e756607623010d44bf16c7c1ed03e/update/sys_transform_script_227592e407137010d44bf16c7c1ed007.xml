@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_script">
+    <sys_transform_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <map display_value="Questions">9663526407137010d44bf16c7c1ed09b</map>
+        <order>100</order>
+        <script><![CDATA[(function runTransformScript(source, map, log, target /*undefined onStart*/ ) {
+
+	if(source.u_all_answers) {
+		var answers = source.u_all_answers
+		.toString()
+		.split(' / ')
+		.forEach(function(element) {
+			var existingAnswers = new GlideRecord('x_463716_dlh_answer');
+			existingAnswers.addEncodedQuery('question=' + target.sys_id);
+			existingAnswers.query();
+		
+			var number = existingAnswers.getRowCount();
+						
+			var ans = new GlideRecord('x_463716_dlh_answer');
+			ans.initialize();
+			ans.body = element.replace(' Correct Incorrect', '');
+			ans.order = number ? number : 0;
+			ans.question = target.sys_id;
+			ans.insert();
+		});		
+	}
+
+})(source, map, log, target);]]></script>
+        <sys_class_name>sys_transform_script</sys_class_name>
+        <sys_created_by>zdravko.verguilov</sys_created_by>
+        <sys_created_on>2021-10-16 13:17:44</sys_created_on>
+        <sys_id>227592e407137010d44bf16c7c1ed007</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>onAfter</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_transform_script_227592e407137010d44bf16c7c1ed007</sys_update_name>
+        <sys_updated_by>zdravko.verguilov</sys_updated_by>
+        <sys_updated_on>2021-10-22 11:49:44</sys_updated_on>
+        <when>onAfter</when>
+    </sys_transform_script>
+</record_update>

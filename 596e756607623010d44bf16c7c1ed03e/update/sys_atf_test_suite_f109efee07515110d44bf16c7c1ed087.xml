@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test_suite">
+    <sys_atf_test_suite action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description>The suite is to test the Personal Development Plan custom app.</description>
+        <input_filter/>
+        <name>PDP</name>
+        <parent/>
+        <sys_class_name>sys_atf_test_suite</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-08-17 06:36:47</sys_created_on>
+        <sys_id>f109efee07515110d44bf16c7c1ed087</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>PDP</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_atf_test_suite_f109efee07515110d44bf16c7c1ed087</sys_update_name>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-08-17 06:36:47</sys_updated_on>
+    </sys_atf_test_suite>
+</record_update>

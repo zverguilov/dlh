@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_view">
+    <sys_ui_view action="DELETE">
+        <group/>
+        <hidden>false</hidden>
+        <name>pdp_view</name>
+        <roles/>
+        <sys_class_name>sys_ui_view</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-04-06 10:35:57</sys_created_on>
+        <sys_id>5194eb7f07220110d44bf16c7c1ed090</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>PDP</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_ui_view_5194eb7f07220110d44bf16c7c1ed090</sys_update_name>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-04-06 10:45:38</sys_updated_on>
+        <title>PDP</title>
+        <user/>
+    </sys_ui_view>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="DLH">596e756607623010d44bf16c7c1ed03e</application>
+        <file_path/>
+        <instance_id>1d64aec2db06f3082f68c597059619f0</instance_id>
+        <instance_name>dev87737</instance_name>
+        <name>sys_ui_view_5194eb7f07220110d44bf16c7c1ed090</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_view"><sys_ui_view action="INSERT_OR_UPDATE"><group/><hidden>false</hidden><name>pdp_view</name><roles/><sys_class_name>sys_ui_view</sys_class_name><sys_created_by>teodora.radeva</sys_created_by><sys_created_on>2022-04-06 10:35:57</sys_created_on><sys_id>5194eb7f07220110d44bf16c7c1ed090</sys_id><sys_mod_count>2</sys_mod_count><sys_name>PDP</sys_name><sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package><sys_policy/><sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope><sys_update_name>sys_ui_view_5194eb7f07220110d44bf16c7c1ed090</sys_update_name><sys_updated_by>teodora.radeva</sys_updated_by><sys_updated_on>2022-04-06 10:45:38</sys_updated_on><title>PDP</title><user/></sys_ui_view></record_update>]]></payload>
+        <payload_hash>-34797737</payload_hash>
+        <record_name>PDP</record_name>
+        <reverted_from/>
+        <source>959da94107ee0110d44bf16c7c1ed0fc</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-04-06 10:45:38</sys_created_on>
+        <sys_id>c7c6afff07220110d44bf16c7c1ed0b5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17ffe7adacb0000001</sys_recorded_at>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-04-06 10:45:38</sys_updated_on>
+        <type>UI View</type>
+        <update_guid>8fc6afffcf220110799e39d87335efb4</update_guid>
+        <update_guid_history>8fc6afffcf220110799e39d87335efb4:-34797737,9a06efbf1d2201106c761c49a9c8ecd9:194074351,5994eb7fce2201105397b3a5ac58a791:623119743</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-04-06 10:50:14</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_view">sys_ui_view</sys_db_object>
+        <sys_id>6cff77bd8ce342b7af4d486a7ed82981</sys_id>
+        <sys_metadata>5194eb7f07220110d44bf16c7c1ed090</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>pdp_view</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_scope_delete display_value="">011918382f754bdf81628cb5cbdc96c1</sys_scope_delete>
+        <sys_update_name>sys_ui_view_5194eb7f07220110d44bf16c7c1ed090</sys_update_name>
+        <sys_update_version display_value="sys_ui_view_5194eb7f07220110d44bf16c7c1ed090">c7c6afff07220110d44bf16c7c1ed0b5</sys_update_version>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-04-06 10:50:14</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="DELETE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <condition/>
+        <description>Allow write for records in x_463716_dlh_pdp, for users with role x_463716_dlh.manager.</description>
+        <name>x_463716_dlh_pdp</name>
+        <operation display_value="delete">delete</operation>
+        <script/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-05-25 13:19:17</sys_created_on>
+        <sys_id>73dfd07707270110d44bf16c7c1ed057</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_463716_dlh_pdp</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_security_acl_73dfd07707270110d44bf16c7c1ed057</sys_update_name>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-05-25 13:19:17</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="DLH">596e756607623010d44bf16c7c1ed03e</application>
+        <file_path/>
+        <instance_id>1d64aec2db06f3082f68c597059619f0</instance_id>
+        <instance_name>dev87737</instance_name>
+        <name>sys_security_acl_73dfd07707270110d44bf16c7c1ed057</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>false</advanced><condition/><description>Allow write for records in x_463716_dlh_pdp, for users with role x_463716_dlh.manager.</description><name>x_463716_dlh_pdp</name><operation display_value="delete">delete</operation><script/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>teodora.radeva</sys_created_by><sys_created_on>2022-05-25 13:19:17</sys_created_on><sys_id>73dfd07707270110d44bf16c7c1ed057</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_463716_dlh_pdp</sys_name><sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package><sys_policy/><sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope><sys_update_name>sys_security_acl_73dfd07707270110d44bf16c7c1ed057</sys_update_name><sys_updated_by>teodora.radeva</sys_updated_by><sys_updated_on>2022-05-25 13:19:17</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+        <payload_hash>-293184886</payload_hash>
+        <record_name>x_463716_dlh_pdp</record_name>
+        <reverted_from/>
+        <source>959da94107ee0110d44bf16c7c1ed0fc</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-05-25 13:19:17</sys_created_on>
+        <sys_id>73dfd07707270110d44bf16c7c1ed05b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>180fb5f22d40000001</sys_recorded_at>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-05-25 13:19:17</sys_updated_on>
+        <type>Access Control</type>
+        <update_guid>7bdfd077802701100b2b5f4274bce45a</update_guid>
+        <update_guid_history>7bdfd077802701100b2b5f4274bce45a:-293184886</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-05-26 12:59:06</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl">sys_security_acl</sys_db_object>
+        <sys_id>766474029e9a4f6cbb86e196014c0dd1</sys_id>
+        <sys_metadata>73dfd07707270110d44bf16c7c1ed057</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_463716_dlh_pdp</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_parent display_value="x_463716_dlh_pdp">13c78f3d07310110d44bf16c7c1ed0cb</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_scope_delete display_value="">011918382f754bdf81628cb5cbdc96c1</sys_scope_delete>
+        <sys_update_name>sys_security_acl_73dfd07707270110d44bf16c7c1ed057</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_73dfd07707270110d44bf16c7c1ed057">73dfd07707270110d44bf16c7c1ed05b</sys_update_version>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-05-26 12:59:06</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

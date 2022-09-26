@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test">
+    <sys_atf_test action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>To test the initial creation of the Personal Development Plan by the employee.</description>
+        <enable_parameterized_testing>false</enable_parameterized_testing>
+        <name>Test PDP initial creation</name>
+        <parameters/>
+        <remember/>
+        <sys_class_name>sys_atf_test</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-07-01 15:11:52</sys_created_on>
+        <sys_id>3e8bd3e307901110d44bf16c7c1ed072</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Test PDP initial creation</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_atf_test_3e8bd3e307901110d44bf16c7c1ed072</sys_update_name>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-08-17 09:47:04</sys_updated_on>
+    </sys_atf_test>
+    <sys_variable_value action="delete_multiple" query="document_key=3e8bd3e307901110d44bf16c7c1ed072"/>
+</record_update>

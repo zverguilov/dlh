@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="DELETE">
+        <category>sc</category>
+        <client_script><![CDATA[function(spAriaUtil, i18n) {
+	
+	var c = this;
+	c.trackPage = function() {
+		window.GlideWebAnalytics.trackEvent("Service Catalog", "Catalog My Requests", "My Requests Widget Loaded");
+	}
+	
+	if (c.data.is_new_order)
+		spAriaUtil.sendLiveMessage(c.data.requestSubmitMsg);
+		
+	c.viewFilter = 'open';
+	
+	c.changeView = function() {
+		window.GlideWebAnalytics.trackEvent("Service Catalog", "Catalog My Requests", "Open/Close Filter Toggled");
+		c.server.get({
+					action: "change_view",
+					view: c.viewFilter,
+					search_text: c.filterText
+				}).then(function(response){
+					c.data = response.data;
+				});
+	}
+	
+	c.search = function() {
+		c.server.get({
+			action: 'search',
+			search_text: c.filterText,
+			view: c.viewFilter
+		}).then(function(response){
+					c.data = response.data;
+					var resultMsg = (c.data.request.req_list.length == 1 ? 'result' : 'results') + ' returned';
+					spAriaUtil.sendLiveMessage(i18n.getMessage('{0} ' + resultMsg).withValues([c.data.request.req_list.length]));
+				});
+	}
+	
+	c.checkEnter = function(event) {
+		if (event.which === 13)
+			c.search();
+	}
+	
+	c.loadMore = function() {
+		window.GlideWebAnalytics.trackEvent("Service Catalog", "Catalog My Requests", "Show More Clicked");
+		spAriaUtil.sendLiveMessage("${Loading more rows}");
+		c.fetching = true;
+		c.server.get({
+			action: 'fetch_more',
+			lastLimit: c.data.lastLimit,
+			view: c.viewFilter,
+			search_text: c.filterText
+		}).then(function(response){
+					c.data = response.data;
+					c.fetching = false;
+				});
+	}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.panel-heading {
+  position: relative;
+  &gt; .fa-filter { 
+    position: absolute;
+    top: 1rem; 
+    right: 1rem; 
+  }
+}
+
+.panel {
+  &gt; .list-group, &gt;.panel-collapse{
+    	.list-group-item {
+		  	border-width: 1px 0 0 0;
+      }
+  }
+}
+
+.btn-show-more {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.control-view {
+  display: flex;
+}
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>my_goals</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>My Goals</name>
+        <option_schema>[{"name":"title","section":"Presentation","default_value":"My Goals","label":"Title","type":"string"},{"name":"show_view","section":"Behavior","default_value":"true","label":"Show View","type":"boolean"},{"hint":"Number of items per page","name":"items_per_page","section":"Behavior","default_value":"15","label":"Items per page","type":"integer"}]</option_schema>
+        <public>false</public>
+        <roles>x_463716_dlh.individual_contributor,x_463716_dlh.manager</roles>
+        <script><![CDATA[(function() {
+	
+	var localInput = input; //to safeguard pullution of "input" via BR or other scripts
+	
+	var alsoGoal = false;
+	
+	var msg = data.messages = {};
+	msg.myRequestsTitle = options.title? gs.getMessage(options.title) : gs.getMessage('My Goals');
+	
+	data.filterMsg = gs.getMessage("Search open goals");
+
+	if (localInput && localInput.view === 'open')
+		data.filterMsg = gs.getMessage("Search open goals");
+	else if (localInput && localInput.view === 'close')
+		data.filterMsg = gs.getMessage("Search closed goals");
+	
+	data.is_new_order = (($sp.getParameter("is_new_order") + '') === "true");
+	data.requestSubmitMsg = gs.getMessage('Thank You. Your goal has been submitted');
+	
+	function getField(gr, name) {
+			var f = {};
+			var id = gr.getUniqueValue();
+			gr = new GlideRecord(gr.getRecordClassName());
+			gr.get(id);
+			f.display_value = gr.getDisplayValue(name);
+			f.value = gr.getValue(name);
+			var ge = gr.getElement(name);
+		  if (ge) {
+				var ed = ge.getED();
+				if (ed)
+					f.type = ed.getInternalType();
+				f.label = ge.getLabel();
+			}
+			return f;
+	}
+
+	function getMyGoalsSysIds() {
+		var ids = {};
+		var rq_filter = new GlideRecord('request_filter');
+		rq_filter.addActiveQuery();
+		if (rq_filter.isValidField('applies_to'))
+			rq_filter.addQuery('applies_to', 1).addOrCondition('applies_to', 10);
+		rq_filter.query();
+		while(rq_filter.next()) {
+			var tableName = rq_filter.table_name;
+			if (rq_filter.isValidField('table'))
+				tableName = rq_filter.table;
+			var gr = new GlideRecord(tableName);
+			gr.addQuery(rq_filter.filter);
+			gr.query();
+			if (tableName == 'x_463716_dlh_pd_goal')
+				alsoGoal = true;
+			while(gr.next()) {
+				var portalSettings = {};
+				portalSettings.page = rq_filter.portal_page.nil()? '' : rq_filter.portal_page.getDisplayValue() + '';
+				portalSettings.primary_display = rq_filter.primary_display.nil()? '': rq_filter.primary_display + '';
+				portalSettings.secondary_displays = rq_filter.secondary_display.nil()? '': rq_filter.secondary_display + '';
+				ids[gr.sys_id + ''] = portalSettings;
+			}
+		}
+		return ids;
+	}
+	
+	// retrieve the request's
+	var myGoalsMap = getMyGoalsSysIds();
+	var taskIDs = Object.keys(myGoalsMap);
+
+	var gr = new GlideRecordSecure('task');
+	if (localInput && localInput.view === 'open') 
+		gr.addActiveQuery();
+	else if (localInput && localInput.view === 'close')
+		gr.addQuery('active', 0);
+	else
+		gr.addActiveQuery();
+
+	gr.orderByDesc('sys_updated_on');
+	if (localInput && localInput.search_text) {
+			var req = [];
+			var task = new GlideRecordSecure('task');
+			task.addQuery('123TEXTQUERY321', localInput.search_text);
+			if (localInput && localInput.view === 'open') {
+				task.addQuery('active', 1);
+				task.addQuery('number', 'STARTSWITH', 'PDG');
+			}	else if (localInput && localInput.view === 'close') {
+				task.addQuery('active', 0);
+				task.addQuery('number', 'STARTSWITH', 'PDG');
+			}
+			else {
+				task.addQuery('active', 1);
+				task.addQuery('number', 'STARTSWITH', 'PDG');
+			}
+			task.addQuery('sys_id', taskIDs);
+			task.query();
+
+			while(task.next())
+				req.push(task.getUniqueValue());
+		
+		/*	if (alsoGoal) {
+				var ritmGR = new GlideRecord('sc_req_item');
+				if (localInput && localInput.view === 'open') 
+					ritmGR.addQuery('request.active', 1);
+				else if (localInput && localInput.view === 'close')
+					ritmGR.addQuery('request.active', 0);
+				else
+					ritmGR.addQuery('request.active', 1);
+				ritmGR.addQuery('123TEXTQUERY321', localInput.search_text);
+				ritmGR.addQuery('request.sys_id', taskIDs);
+				ritmGR.query();
+				while(ritmGR.next())
+					req.push(ritmGR.getValue('request'));
+			}
+			gr.addQuery('sys_id', req);*/
+		}
+		else 
+			gr.addQuery('sys_id', taskIDs);
+	gr.query();
+
+	data.goals = {};
+
+	data.goals.req_list = [];
+	var recordIdx = 0;	
+	var limit = options.items_per_page? options.items_per_page : 15;
+	if (localInput && localInput.action == 'fetch_more')
+		data.lastLimit = localInput.lastLimit + limit;
+	else
+		data.lastLimit = limit;
+
+	data.hasMore = false;
+	while (recordIdx != data.lastLimit && gr.next()) {
+		var portalSettings = myGoalsMap[gr.getUniqueValue()];
+		if (typeof portalSettings == 'undefined')
+			portalSettings = {};
+
+		var goal = {};
+		goal.sys_id = gr.getValue('sys_id');
+
+		/*if (gr.getRecordClassName() == 'sc_request') {
+				var ritm = new GlideRecord("sc_req_item");
+				ritm.addQuery("request", gr.getUniqueValue());
+				ritm.query();
+				if (ritm.getRowCount() == 0)
+					continue;
+				if (ritm.getRowCount() > 1)
+					record.display_field = gs.getMessage("{0} requested items", ritm.getRowCount());
+				else {
+					ritm.next();
+					record.display_field = ritm.cat_item.getDisplayValue() || ritm.getDisplayValue("short_description");
+				}
+				record.url = { id: portalSettings.page? portalSettings.page: 'sc_request', table: 'sc_request', sys_id: record.sys_id};
+		} else {
+				record.display_field = portalSettings.primary_display ? getField(gr, portalSettings.primary_display).display_value : getField(gr, 'number').display_value;
+				record.url = { id: portalSettings.page? portalSettings.page :'ticket', table: gr.getRecordClassName(), sys_id: record.sys_id};
+		}
+		if (portalSettings.secondary_displays) {
+			record.secondary_displays = [];
+			portalSettings.secondary_displays.split(",").forEach(function (sDisplay){
+				record.secondary_displays.push(getField(gr, sDisplay));
+			});
+		}
+		else 
+			record.secondary_displays = getField(gr, 'short_description');*/
+		
+	/*	record.updated_on = gr.getValue('sys_updated_on');
+		record.state = gr.getDisplayValue('state');
+		if((recordIdx !== 0) && (data.lastLimit - limit === recordIdx))
+			record.highlight = true;
+
+		data.request.req_list.push(record);
+		recordIdx++;*/
+	}
+
+	if (gr.next())
+			data.hasMore = true;
+	})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-05-26 07:28:42</sys_created_on>
+        <sys_id>c63954cc07334110d44bf16c7c1ed0f1</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>My Goals</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sp_widget_c63954cc07334110d44bf16c7c1ed0f1</sys_update_name>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-05-26 19:07:52</sys_updated_on>
+        <template><![CDATA[<div class="panel panel-default b" ng-init="c.trackPage()">
+ <div class="panel-heading" >
+    <h2 class="panel-title">{{::data.messages.myRequestsTitle}}</h2>
+  </div> 	
+  <div class="panels-container list-group">
+			<div class="list-group-item row" style="margin:0px;border-top:0px;" >
+        	<div class="col-md-5" style="">
+            <div class="input-group">
+            </div>
+          </div>
+          <div class="col-md-3 col-xs-5 " style="">
+            <div class="form-inline control-view" ng-if="c.options.show_view == 'true'">
+            	<label class="control-label hidden-xs wrapper-xs " for="view">${View}</label>
+              <select ng-model="c.viewFilter" id="view" class="sc-basic-select" ng-change="c.changeView()" style="width:80%">
+                <option value="open" selected="true">${Open}</option>
+                <option value="close">${Closed}</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-7" style="">
+            <div class="input-group" style="width:100%">
+              <input ng-model="c.filterText" ng-keypress="c.checkEnter($event)"class="form-control" style="width:100%" placeholder="{{data.filterMsg}}" aria-label="{{data.filterMsg}}">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="c.search()" title="${Search}" aria-label="${Search}">
+                	<i class="fa fa-search"></i>
+                </button>
+              </span>
+            </div><!-- /input-group -->
+              
+          </div>
+    	</div>
+    	<div ng-if="c.data.request.req_list.length == 0 && !c.filterText" class="panel-body panels-container">
+        ${You do not have any goals} 
+      </div>
+    	<div ng-if="c.data.request.req_list.length == 0 && c.filterText" class="panel-body panels-container">
+        ${Search didn't match any goals} 
+      </div>
+    <div role="table" class="table table-responsive m-b-none">
+      <div role="rowgroup" class="sr-only">
+        <div role="row">
+	      <span role="columnheader">${Goals}</span>
+	      <span role="columnheader">${State}</span>
+	      <span role="columnheader">${Updated}</span>
+       </div>
+      </div>
+      <div role="row" class="list-group-item table-responsive" ng-repeat="item in c.data.request.req_list | limitTo: c.data.lastLimit track by item.sys_id" style="margin:0px" >
+        <div role="cell" class="col-xs-6 padder-l-none padder-r-none main-column">
+          <div class="primary-display">
+            <a href="?id={{::item.url.id}}&table={{::item.url.table}}&sys_id={{::item.url.sys_id}}" sn-focus="{{::item.highlight}}"> {{::item.display_field}} </a>
+          </div>
+          <small class="text-muted">
+            <div ng-repeat="f in item.secondary_displays" class="secondary-display">
+              <span >{{::f.display_value}}</span>
+            </div>
+          </small>
+        </div>
+        <div role="cell" class="col-xs-3 padder-l-none padder-r-none state-column">
+          <div class="state">
+            <span> {{::item.state}}</span>
+          </div>
+        </div>
+        <div role="cell" class="col-xs-3 padder-l-none padder-r-none updated-column">
+          <div class="updated">
+            <i class="fa fa-clock-o" aria-hidden="true" title="${Updated}"></i>
+            <sn-time-ago timestamp="::item.updated_on"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-sm-12 pull-none" ng-if="c.data.hasMore" style="padding-bottom:15px">
+					<div class="text-a-c" ng-if="c.fetching">
+          	<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
+						<span class="sr-only">${Loading...}</span>  
+  	      </div>
+          <button class="btn btn-default btn-show-more" ng-click="c.loadMore()"> ${Show More} </button>  
+      </div>]]></template>
+    </sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="DLH">596e756607623010d44bf16c7c1ed03e</application>
+        <file_path/>
+        <instance_id>1d64aec2db06f3082f68c597059619f0</instance_id>
+        <instance_name>dev87737</instance_name>
+        <name>sp_widget_c63954cc07334110d44bf16c7c1ed0f1</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;category&gt;sc&lt;/category&gt;&lt;client_script&gt;&lt;![CDATA[function(spAriaUtil, i18n) {
+	
+	var c = this;
+	c.trackPage = function() {
+		window.GlideWebAnalytics.trackEvent("Service Catalog", "Catalog My Requests", "My Requests Widget Loaded");
+	}
+	
+	if (c.data.is_new_order)
+		spAriaUtil.sendLiveMessage(c.data.requestSubmitMsg);
+		
+	c.viewFilter = 'open';
+	
+	c.changeView = function() {
+		window.GlideWebAnalytics.trackEvent("Service Catalog", "Catalog My Requests", "Open/Close Filter Toggled");
+		c.server.get({
+					action: "change_view",
+					view: c.viewFilter,
+					search_text: c.filterText
+				}).then(function(response){
+					c.data = response.data;
+				});
+	}
+	
+	c.search = function() {
+		c.server.get({
+			action: 'search',
+			search_text: c.filterText,
+			view: c.viewFilter
+		}).then(function(response){
+					c.data = response.data;
+					var resultMsg = (c.data.request.req_list.length == 1 ? 'result' : 'results') + ' returned';
+					spAriaUtil.sendLiveMessage(i18n.getMessage('{0} ' + resultMsg).withValues([c.data.request.req_list.length]));
+				});
+	}
+	
+	c.checkEnter = function(event) {
+		if (event.which === 13)
+			c.search();
+	}
+	
+	c.loadMore = function() {
+		window.GlideWebAnalytics.trackEvent("Service Catalog", "Catalog My Requests", "Show More Clicked");
+		spAriaUtil.sendLiveMessage("${Loading more rows}");
+		c.fetching = true;
+		c.server.get({
+			action: 'fetch_more',
+			lastLimit: c.data.lastLimit,
+			view: c.viewFilter,
+			search_text: c.filterText
+		}).then(function(response){
+					c.data = response.data;
+					c.fetching = false;
+				});
+	}
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css&gt;.panel-heading {
+  position: relative;
+  &amp;gt; .fa-filter { 
+    position: absolute;
+    top: 1rem; 
+    right: 1rem; 
+  }
+}
+
+.panel {
+  &amp;gt; .list-group, &amp;gt;.panel-collapse{
+    	.list-group-item {
+		  	border-width: 1px 0 0 0;
+      }
+  }
+}
+
+.btn-show-more {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.control-view {
+  display: flex;
+}
+
+
+&lt;/css&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;my_goals&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link&gt;&lt;![CDATA[function link(scope, element, attrs, controller) {  }]]&gt;&lt;/link&gt;&lt;name&gt;My Goals&lt;/name&gt;&lt;option_schema&gt;[{"name":"title","section":"Presentation","default_value":"My Goals","label":"Title","type":"string"},{"name":"show_view","section":"Behavior","default_value":"true","label":"Show View","type":"boolean"},{"hint":"Number of items per page","name":"items_per_page","section":"Behavior","default_value":"15","label":"Items per page","type":"integer"}]&lt;/option_schema&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles&gt;x_463716_dlh.individual_contributor,x_463716_dlh.manager&lt;/roles&gt;&lt;script&gt;&lt;![CDATA[(function() {
+	
+	var localInput = input; //to safeguard pullution of "input" via BR or other scripts
+	
+	var alsoGoal = false;
+	
+	var msg = data.messages = {};
+	msg.myRequestsTitle = options.title? gs.getMessage(options.title) : gs.getMessage('My Goals');
+	
+	data.filterMsg = gs.getMessage("Search open goals");
+
+	if (localInput &amp;&amp; localInput.view === 'open')
+		data.filterMsg = gs.getMessage("Search open goals");
+	else if (localInput &amp;&amp; localInput.view === 'close')
+		data.filterMsg = gs.getMessage("Search closed goals");
+	
+	data.is_new_order = (($sp.getParameter("is_new_order") + '') === "true");
+	data.requestSubmitMsg = gs.getMessage('Thank You. Your goal has been submitted');
+	
+	function getField(gr, name) {
+			var f = {};
+			var id = gr.getUniqueValue();
+			gr = new GlideRecord(gr.getRecordClassName());
+			gr.get(id);
+			f.display_value = gr.getDisplayValue(name);
+			f.value = gr.getValue(name);
+			var ge = gr.getElement(name);
+		  if (ge) {
+				var ed = ge.getED();
+				if (ed)
+					f.type = ed.getInternalType();
+				f.label = ge.getLabel();
+			}
+			return f;
+	}
+
+	function getMyGoalsSysIds() {
+		var ids = {};
+		var rq_filter = new GlideRecord('request_filter');
+		rq_filter.addActiveQuery();
+		if (rq_filter.isValidField('applies_to'))
+			rq_filter.addQuery('applies_to', 1).addOrCondition('applies_to', 10);
+		rq_filter.query();
+		while(rq_filter.next()) {
+			var tableName = rq_filter.table_name;
+			if (rq_filter.isValidField('table'))
+				tableName = rq_filter.table;
+			var gr = new GlideRecord(tableName);
+			gr.addQuery(rq_filter.filter);
+			gr.query();
+			if (tableName == 'x_463716_dlh_pd_goal')
+				alsoGoal = true;
+			while(gr.next()) {
+				var portalSettings = {};
+				portalSettings.page = rq_filter.portal_page.nil()? '' : rq_filter.portal_page.getDisplayValue() + '';
+				portalSettings.primary_display = rq_filter.primary_display.nil()? '': rq_filter.primary_display + '';
+				portalSettings.secondary_displays = rq_filter.secondary_display.nil()? '': rq_filter.secondary_display + '';
+				ids[gr.sys_id + ''] = portalSettings;
+			}
+		}
+		return ids;
+	}
+	
+	// retrieve the request's
+	var myGoalsMap = getMyGoalsSysIds();
+	var taskIDs = Object.keys(myGoalsMap);
+
+	var gr = new GlideRecordSecure('task');
+	if (localInput &amp;&amp; localInput.view === 'open') 
+		gr.addActiveQuery();
+	else if (localInput &amp;&amp; localInput.view === 'close')
+		gr.addQuery('active', 0);
+	else
+		gr.addActiveQuery();
+
+	gr.orderByDesc('sys_updated_on');
+	if (localInput &amp;&amp; localInput.search_text) {
+			var req = [];
+			var task = new GlideRecordSecure('task');
+			task.addQuery('123TEXTQUERY321', localInput.search_text);
+			if (localInput &amp;&amp; localInput.view === 'open') {
+				task.addQuery('active', 1);
+				task.addQuery('number', 'STARTSWITH', 'PDG');
+			}	else if (localInput &amp;&amp; localInput.view === 'close') {
+				task.addQuery('active', 0);
+				task.addQuery('number', 'STARTSWITH', 'PDG');
+			}
+			else {
+				task.addQuery('active', 1);
+				task.addQuery('number', 'STARTSWITH', 'PDG');
+			}
+			task.addQuery('sys_id', taskIDs);
+			task.query();
+
+			while(task.next())
+				req.push(task.getUniqueValue());
+		
+		/*	if (alsoGoal) {
+				var ritmGR = new GlideRecord('sc_req_item');
+				if (localInput &amp;&amp; localInput.view === 'open') 
+					ritmGR.addQuery('request.active', 1);
+				else if (localInput &amp;&amp; localInput.view === 'close')
+					ritmGR.addQuery('request.active', 0);
+				else
+					ritmGR.addQuery('request.active', 1);
+				ritmGR.addQuery('123TEXTQUERY321', localInput.search_text);
+				ritmGR.addQuery('request.sys_id', taskIDs);
+				ritmGR.query();
+				while(ritmGR.next())
+					req.push(ritmGR.getValue('request'));
+			}
+			gr.addQuery('sys_id', req);*/
+		}
+		else 
+			gr.addQuery('sys_id', taskIDs);
+	gr.query();
+
+	data.goals = {};
+
+	data.goals.req_list = [];
+	var recordIdx = 0;	
+	var limit = options.items_per_page? options.items_per_page : 15;
+	if (localInput &amp;&amp; localInput.action == 'fetch_more')
+		data.lastLimit = localInput.lastLimit + limit;
+	else
+		data.lastLimit = limit;
+
+	data.hasMore = false;
+	while (recordIdx != data.lastLimit &amp;&amp; gr.next()) {
+		var portalSettings = myGoalsMap[gr.getUniqueValue()];
+		if (typeof portalSettings == 'undefined')
+			portalSettings = {};
+
+		var goal = {};
+		goal.sys_id = gr.getValue('sys_id');
+
+		/*if (gr.getRecordClassName() == 'sc_request') {
+				var ritm = new GlideRecord("sc_req_item");
+				ritm.addQuery("request", gr.getUniqueValue());
+				ritm.query();
+				if (ritm.getRowCount() == 0)
+					continue;
+				if (ritm.getRowCount() &gt; 1)
+					record.display_field = gs.getMessage("{0} requested items", ritm.getRowCount());
+				else {
+					ritm.next();
+					record.display_field = ritm.cat_item.getDisplayValue() || ritm.getDisplayValue("short_description");
+				}
+				record.url = { id: portalSettings.page? portalSettings.page: 'sc_request', table: 'sc_request', sys_id: record.sys_id};
+		} else {
+				record.display_field = portalSettings.primary_display ? getField(gr, portalSettings.primary_display).display_value : getField(gr, 'number').display_value;
+				record.url = { id: portalSettings.page? portalSettings.page :'ticket', table: gr.getRecordClassName(), sys_id: record.sys_id};
+		}
+		if (portalSettings.secondary_displays) {
+			record.secondary_displays = [];
+			portalSettings.secondary_displays.split(",").forEach(function (sDisplay){
+				record.secondary_displays.push(getField(gr, sDisplay));
+			});
+		}
+		else 
+			record.secondary_displays = getField(gr, 'short_description');*/
+		
+	/*	record.updated_on = gr.getValue('sys_updated_on');
+		record.state = gr.getDisplayValue('state');
+		if((recordIdx !== 0) &amp;&amp; (data.lastLimit - limit === recordIdx))
+			record.highlight = true;
+
+		data.request.req_list.push(record);
+		recordIdx++;*/
+	}
+
+	if (gr.next())
+			data.hasMore = true;
+	})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;teodora.radeva&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-05-26 07:28:42&lt;/sys_created_on&gt;&lt;sys_id&gt;c63954cc07334110d44bf16c7c1ed0f1&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;My Goals&lt;/sys_name&gt;&lt;sys_package display_value="DLH" source="x_463716_dlh"&gt;596e756607623010d44bf16c7c1ed03e&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="DLH"&gt;596e756607623010d44bf16c7c1ed03e&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_c63954cc07334110d44bf16c7c1ed0f1&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;teodora.radeva&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-05-26 19:07:52&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div class="panel panel-default b" ng-init="c.trackPage()"&gt;
+ &lt;div class="panel-heading" &gt;
+    &lt;h2 class="panel-title"&gt;{{::data.messages.myRequestsTitle}}&lt;/h2&gt;
+  &lt;/div&gt; 	
+  &lt;div class="panels-container list-group"&gt;
+			&lt;div class="list-group-item row" style="margin:0px;border-top:0px;" &gt;
+        	&lt;div class="col-md-5" style=""&gt;
+            &lt;div class="input-group"&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="col-md-3 col-xs-5 " style=""&gt;
+            &lt;div class="form-inline control-view" ng-if="c.options.show_view == 'true'"&gt;
+            	&lt;label class="control-label hidden-xs wrapper-xs " for="view"&gt;${View}&lt;/label&gt;
+              &lt;select ng-model="c.viewFilter" id="view" class="sc-basic-select" ng-change="c.changeView()" style="width:80%"&gt;
+                &lt;option value="open" selected="true"&gt;${Open}&lt;/option&gt;
+                &lt;option value="close"&gt;${Closed}&lt;/option&gt;
+              &lt;/select&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="col-md-4 col-xs-7" style=""&gt;
+            &lt;div class="input-group" style="width:100%"&gt;
+              &lt;input ng-model="c.filterText" ng-keypress="c.checkEnter($event)"class="form-control" style="width:100%" placeholder="{{data.filterMsg}}" aria-label="{{data.filterMsg}}"&gt;
+              &lt;span class="input-group-btn"&gt;
+                &lt;button class="btn btn-default" type="button" ng-click="c.search()" title="${Search}" aria-label="${Search}"&gt;
+                	&lt;i class="fa fa-search"&gt;&lt;/i&gt;
+                &lt;/button&gt;
+              &lt;/span&gt;
+            &lt;/div&gt;&lt;!-- /input-group --&gt;
+              
+          &lt;/div&gt;
+    	&lt;/div&gt;
+    	&lt;div ng-if="c.data.request.req_list.length == 0 &amp;&amp; !c.filterText" class="panel-body panels-container"&gt;
+        ${You do not have any goals} 
+      &lt;/div&gt;
+    	&lt;div ng-if="c.data.request.req_list.length == 0 &amp;&amp; c.filterText" class="panel-body panels-container"&gt;
+        ${Search didn't match any goals} 
+      &lt;/div&gt;
+    &lt;div role="table" class="table table-responsive m-b-none"&gt;
+      &lt;div role="rowgroup" class="sr-only"&gt;
+        &lt;div role="row"&gt;
+	      &lt;span role="columnheader"&gt;${Goals}&lt;/span&gt;
+	      &lt;span role="columnheader"&gt;${State}&lt;/span&gt;
+	      &lt;span role="columnheader"&gt;${Updated}&lt;/span&gt;
+       &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div role="row" class="list-group-item table-responsive" ng-repeat="item in c.data.request.req_list | limitTo: c.data.lastLimit track by item.sys_id" style="margin:0px" &gt;
+        &lt;div role="cell" class="col-xs-6 padder-l-none padder-r-none main-column"&gt;
+          &lt;div class="primary-display"&gt;
+            &lt;a href="?id={{::item.url.id}}&amp;table={{::item.url.table}}&amp;sys_id={{::item.url.sys_id}}" sn-focus="{{::item.highlight}}"&gt; {{::item.display_field}} &lt;/a&gt;
+          &lt;/div&gt;
+          &lt;small class="text-muted"&gt;
+            &lt;div ng-repeat="f in item.secondary_displays" class="secondary-display"&gt;
+              &lt;span &gt;{{::f.display_value}}&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/small&gt;
+        &lt;/div&gt;
+        &lt;div role="cell" class="col-xs-3 padder-l-none padder-r-none state-column"&gt;
+          &lt;div class="state"&gt;
+            &lt;span&gt; {{::item.state}}&lt;/span&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div role="cell" class="col-xs-3 padder-l-none padder-r-none updated-column"&gt;
+          &lt;div class="updated"&gt;
+            &lt;i class="fa fa-clock-o" aria-hidden="true" title="${Updated}"&gt;&lt;/i&gt;
+            &lt;sn-time-ago timestamp="::item.updated_on"/&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="col-sm-12 pull-none" ng-if="c.data.hasMore" style="padding-bottom:15px"&gt;
+					&lt;div class="text-a-c" ng-if="c.fetching"&gt;
+          	&lt;i class="fa fa-spinner fa-pulse fa-2x fa-fw"&gt;&lt;/i&gt;
+						&lt;span class="sr-only"&gt;${Loading...}&lt;/span&gt;  
+  	      &lt;/div&gt;
+          &lt;button class="btn btn-default btn-show-more" ng-click="c.loadMore()"&gt; ${Show More} &lt;/button&gt;  
+      &lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1728962110</payload_hash>
+        <record_name>My Goals</record_name>
+        <reverted_from/>
+        <source>959da94107ee0110d44bf16c7c1ed0fc</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-05-26 21:02:26</sys_created_on>
+        <sys_id>c6731f0c07bb4110d44bf16c7c1ed0ce</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>181022d85340000001</sys_recorded_at>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-05-26 21:02:26</sys_updated_on>
+        <type>Widget</type>
+        <update_guid>ce731f0cd4bb411073673e7e8a61e7cd</update_guid>
+        <update_guid_history>ce731f0cd4bb411073673e7e8a61e7cd:-1728962110,fb821fc80abb411043910bfadf102fe0:-414009290,a739fa44a27b4110a9e4c9fdf9603703:-1728962110,05f1e4c4dc7341109aa281a8f553938b:-2089314164,5891e4c43e734110d5936b3bcdd45f33:1371905949,4e39d8cc67334110624aaa1d81a9301b:486267829</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="My Goals">63a4df4c07bb4110d44bf16c7c1ed0b3</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-05-26 21:07:44</sys_created_on>
+        <sys_db_object display_value="" name="sp_widget">sp_widget</sys_db_object>
+        <sys_id>0f33175c17e349a682e5401e72fef3e4</sys_id>
+        <sys_metadata>c63954cc07334110d44bf16c7c1ed0f1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>My Goals</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_scope_delete display_value="">011918382f754bdf81628cb5cbdc96c1</sys_scope_delete>
+        <sys_update_name>sp_widget_c63954cc07334110d44bf16c7c1ed0f1</sys_update_name>
+        <sys_update_version display_value="sp_widget_c63954cc07334110d44bf16c7c1ed0f1">c6731f0c07bb4110d44bf16c7c1ed0ce</sys_update_version>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-05-26 21:07:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

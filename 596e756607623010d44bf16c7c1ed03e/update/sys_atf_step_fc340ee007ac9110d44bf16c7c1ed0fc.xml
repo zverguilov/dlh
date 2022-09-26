@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Submit the current form and confirm form submitted to server</description>
+        <display_name>Submit a Form</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes>Submit the form</notes>
+        <order>6</order>
+        <snapshot/>
+        <step_config display_value="Submit a Form">be8e0a935332120028bc29cac2dc34e4</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-07-04 11:20:23</sys_created_on>
+        <sys_id>fc340ee007ac9110d44bf16c7c1ed0fc</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Submit a Form</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_atf_step_fc340ee007ac9110d44bf16c7c1ed0fc</sys_update_name>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-08-17 09:58:43</sys_updated_on>
+        <table/>
+        <test display_value="Test PDP initial creation">3e8bd3e307901110d44bf16c7c1ed072</test>
+        <timeout>1970-01-01 00:00:05</timeout>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=fc340ee007ac9110d44bf16c7c1ed0fc"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>fc340ee007ac9110d44bf16c7c1ed0fc</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-07-04 11:20:23</sys_created_on>
+        <sys_id>44440e6c0720d110d44bf16c7c1ed0fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-07-04 11:20:23</sys_updated_on>
+        <value>standard_ui</value>
+        <variable display_value="Form UI">ae8b91c9ffa333008d3f5d9ad53bf1ba</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>fc340ee007ac9110d44bf16c7c1ed0fc</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-07-04 11:20:23</sys_created_on>
+        <sys_id>80440e6c0720d110d44bf16c7c1ed0fd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-07-04 11:20:23</sys_updated_on>
+        <value>form_submitted_to_server</value>
+        <variable display_value="Assert type">c796d40497302200abe4bb7503ac4ad8</variable>
+    </sys_variable_value>
+</record_update>

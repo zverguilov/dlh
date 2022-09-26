@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <name>x_463716_dlh.reactPoCCSS</name>
+        <script><![CDATA[body {
+	margin:0;
+	font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale
+}
+
+code {
+	font-family:source-code-pro,Menlo,Monaco,Consolas,"Courier New",monospace
+} 
+.App {
+	text-align:center
+}
+.App-logo {
+	height:40vmin;pointer-events:none
+}
+@media (prefers-reduced-motion:no-preference) {
+	.App-logo {
+		-webkit-animation:App-logo-spin 20s linear infinite;animation:App-logo-spin 20s linear infinite
+	}
+}
+.App-header {
+	background-color:#282c34;
+	min-height:100vh;display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	font-size:calc(10px + 2vmin);
+	color:#fff
+}
+.App-link {
+	color:#61dafb
+}
+@-webkit-keyframes App-logo-spin {
+	0% {
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg)
+	} to {
+		-webkit-transform:rotate(1turn);
+		transform:rotate(1turn)
+	}
+}
+@keyframes App-logo-spin {
+	0% {
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg)
+	} to {
+		-webkit-transform:rotate(1turn);transform:rotate(1turn)
+	}
+}
+]]></script>
+        <script_name>reactPoCCSS</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>zdravko.verguilov</sys_created_by>
+        <sys_created_on>2021-09-17 07:15:28</sys_created_on>
+        <sys_id>d9fe2bc307223010d44bf16c7c1ed0f3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>x_463716_dlh.reactPoCCSS</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_ui_script_d9fe2bc307223010d44bf16c7c1ed0f3</sys_update_name>
+        <sys_updated_by>zdravko.verguilov</sys_updated_by>
+        <sys_updated_on>2021-09-17 07:47:43</sys_updated_on>
+        <ui_type>1</ui_type>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>

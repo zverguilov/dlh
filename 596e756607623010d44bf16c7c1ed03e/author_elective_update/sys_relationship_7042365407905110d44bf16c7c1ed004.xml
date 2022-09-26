@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_relationship">
+    <sys_relationship action="DELETE">
+        <advanced>false</advanced>
+        <apply_to/>
+        <basic_apply_to>x_463716_dlh_pdp</basic_apply_to>
+        <basic_query_from>x_463716_dlh_pd_goal</basic_query_from>
+        <insert_callback/>
+        <name>PD Goals</name>
+        <query_from/>
+        <query_with><![CDATA[(function refineQuery(current, parent) {
+
+	// Add your code here, such as current.addQuery(field, value);
+	current.addQuery('employee', 'parent.assigned_to');
+})(current, parent);]]></query_with>
+        <reference_field>assignment_group</reference_field>
+        <related_list/>
+        <simple_reference>false</simple_reference>
+        <sys_class_name>sys_relationship</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-06-21 09:48:07</sys_created_on>
+        <sys_id>7042365407905110d44bf16c7c1ed004</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>PD Goals</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_relationship_7042365407905110d44bf16c7c1ed004</sys_update_name>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-06-21 10:02:54</sys_updated_on>
+    </sys_relationship>
+    <sys_translated_text action="DELETE" query="documentkey=7042365407905110d44bf16c7c1ed004"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="DLH">596e756607623010d44bf16c7c1ed03e</application>
+        <file_path/>
+        <instance_id>1d64aec2db06f3082f68c597059619f0</instance_id>
+        <instance_name>dev87737</instance_name>
+        <name>sys_relationship_7042365407905110d44bf16c7c1ed004</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_relationship"&gt;&lt;sys_relationship action="INSERT_OR_UPDATE"&gt;&lt;advanced&gt;false&lt;/advanced&gt;&lt;apply_to/&gt;&lt;basic_apply_to&gt;x_463716_dlh_pdp&lt;/basic_apply_to&gt;&lt;basic_query_from&gt;x_463716_dlh_pd_goal&lt;/basic_query_from&gt;&lt;insert_callback/&gt;&lt;name&gt;PD Goals&lt;/name&gt;&lt;query_from/&gt;&lt;query_with&gt;&lt;![CDATA[(function refineQuery(current, parent) {
+
+	// Add your code here, such as current.addQuery(field, value);
+	current.addQuery('employee', 'parent.assigned_to');
+})(current, parent);]]&gt;&lt;/query_with&gt;&lt;reference_field&gt;assignment_group&lt;/reference_field&gt;&lt;related_list/&gt;&lt;simple_reference&gt;false&lt;/simple_reference&gt;&lt;sys_class_name&gt;sys_relationship&lt;/sys_class_name&gt;&lt;sys_created_by&gt;teodora.radeva&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-06-21 09:48:07&lt;/sys_created_on&gt;&lt;sys_id&gt;7042365407905110d44bf16c7c1ed004&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;PD Goals&lt;/sys_name&gt;&lt;sys_package display_value="DLH" source="x_463716_dlh"&gt;596e756607623010d44bf16c7c1ed03e&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="DLH"&gt;596e756607623010d44bf16c7c1ed03e&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_relationship_7042365407905110d44bf16c7c1ed004&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;teodora.radeva&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-06-21 10:02:54&lt;/sys_updated_on&gt;&lt;/sys_relationship&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=7042365407905110d44bf16c7c1ed004"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>1496478319</payload_hash>
+        <record_name>PD Goals</record_name>
+        <reverted_from/>
+        <source>4942cb5907228110d44bf16c7c1ed0f1</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-06-21 10:02:54</sys_created_on>
+        <sys_id>86d57e1807905110d44bf16c7c1ed055</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18185b709be0000001</sys_recorded_at>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-06-21 10:02:54</sys_updated_on>
+        <type>Relationship</type>
+        <update_guid>4ed57e1832905110b3aff33b3695ef54</update_guid>
+        <update_guid_history>4ed57e1832905110b3aff33b3695ef54:1496478319,a3b3fe948f90511070fac690888cc744:-619584225,8913b694fb9051108e0cb760e9296508:-1059260454,f172f21433505110360d7f1a01928388:1707412924</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-06-21 10:16:22</sys_created_on>
+        <sys_db_object display_value="" name="sys_relationship">sys_relationship</sys_db_object>
+        <sys_id>4827a420dc78441ea4b91d9dce166004</sys_id>
+        <sys_metadata>7042365407905110d44bf16c7c1ed004</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>PD Goals</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_parent display_value="PDP">0287cb3d07310110d44bf16c7c1ed053</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_scope_delete display_value="">011918382f754bdf81628cb5cbdc96c1</sys_scope_delete>
+        <sys_update_name>sys_relationship_7042365407905110d44bf16c7c1ed004</sys_update_name>
+        <sys_update_version display_value="sys_relationship_7042365407905110d44bf16c7c1ed004">86d57e1807905110d44bf16c7c1ed055</sys_update_version>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-06-21 10:16:22</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

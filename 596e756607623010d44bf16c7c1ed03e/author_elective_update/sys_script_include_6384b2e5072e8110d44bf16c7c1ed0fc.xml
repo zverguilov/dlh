@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>public</access>
+        <active>false</active>
+        <api_name>x_463716_dlh.getSkills</api_name>
+        <caller_access>1</caller_access>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>getSkills</name>
+        <script><![CDATA[function getSkills() {
+	var skills = current.skills_to_acquire;
+	return 'sys_idIN' + skills;
+}]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-03-30 09:39:57</sys_created_on>
+        <sys_id>6384b2e5072e8110d44bf16c7c1ed0fc</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>getSkills</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_script_include_6384b2e5072e8110d44bf16c7c1ed0fc</sys_update_name>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-03-30 11:10:55</sys_updated_on>
+    </sys_script_include>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="DLH">596e756607623010d44bf16c7c1ed03e</application>
+        <file_path/>
+        <instance_id>1d64aec2db06f3082f68c597059619f0</instance_id>
+        <instance_name>dev87737</instance_name>
+        <name>sys_script_include_6384b2e5072e8110d44bf16c7c1ed0fc</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;public&lt;/access&gt;&lt;active&gt;false&lt;/active&gt;&lt;api_name&gt;x_463716_dlh.getSkills&lt;/api_name&gt;&lt;caller_access&gt;1&lt;/caller_access&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;description/&gt;&lt;name&gt;getSkills&lt;/name&gt;&lt;script&gt;&lt;![CDATA[function getSkills() {
+	var skills = current.skills_to_acquire;
+	return 'sys_idIN' + skills;
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;teodora.radeva&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-03-30 09:39:57&lt;/sys_created_on&gt;&lt;sys_id&gt;6384b2e5072e8110d44bf16c7c1ed0fc&lt;/sys_id&gt;&lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;&lt;sys_name&gt;getSkills&lt;/sys_name&gt;&lt;sys_package display_value="DLH" source="x_463716_dlh"&gt;596e756607623010d44bf16c7c1ed03e&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="DLH"&gt;596e756607623010d44bf16c7c1ed03e&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_6384b2e5072e8110d44bf16c7c1ed0fc&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;teodora.radeva&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-03-30 11:10:55&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1439258782</payload_hash>
+        <record_name>getSkills</record_name>
+        <reverted_from/>
+        <source>959da94107ee0110d44bf16c7c1ed0fc</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-03-30 11:10:55</sys_created_on>
+        <sys_id>9179e36907ee8110d44bf16c7c1ed094</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17fda857c060000001</sys_recorded_at>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-03-30 11:10:55</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>5979e36929ee8110cb1906cf1fa5e593</update_guid>
+        <update_guid_history>5979e36929ee8110cb1906cf1fa5e593:-1439258782,d8e8eb2901ee8110f53e1fef81ae7b90:-1878234805,4708abe5dfee81108b996aec58548ae0:-11538923,7ca45f65086e81109ba59a405d2c98da:-172551292</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-03-30 11:16:49</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>a45df3d9f91b4c49a2fe0af116ab36c9</sys_id>
+        <sys_metadata>6384b2e5072e8110d44bf16c7c1ed0fc</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>getSkills</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_scope_delete display_value="">011918382f754bdf81628cb5cbdc96c1</sys_scope_delete>
+        <sys_update_name>sys_script_include_6384b2e5072e8110d44bf16c7c1ed0fc</sys_update_name>
+        <sys_update_version display_value="sys_script_include_6384b2e5072e8110d44bf16c7c1ed0fc">9179e36907ee8110d44bf16c7c1ed094</sys_update_version>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-03-30 11:16:49</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Set the following values on the form:
+Job Title = BPC
+and Personal strengths = A nice guy</description>
+        <display_name>Set Field Values</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes>Test the population of some of the fields</notes>
+        <order>5</order>
+        <snapshot/>
+        <step_config display_value="Set Field Values">fcae4a935332120028bc29cac2dc340e</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-08-17 09:58:22</sys_created_on>
+        <sys_id>d217907a07155110d44bf16c7c1ed0b2</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Set Field Values</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_atf_step_d217907a07155110d44bf16c7c1ed0b2</sys_update_name>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-08-17 09:58:43</sys_updated_on>
+        <table>x_463716_dlh_pdp</table>
+        <test display_value="Test PDP initial creation">3e8bd3e307901110d44bf16c7c1ed072</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=d217907a07155110d44bf16c7c1ed0b2"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>d217907a07155110d44bf16c7c1ed0b2</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-08-17 09:58:22</sys_created_on>
+        <sys_id>7367547a07155110d44bf16c7c1ed02c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-08-17 09:58:22</sys_updated_on>
+        <value>job_title=BPC^personal_strengths=A nice guy^EQ</value>
+        <variable display_value="Field values">b3dba2465320220002c6435723dc34f0</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>d217907a07155110d44bf16c7c1ed0b2</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-08-17 09:58:22</sys_created_on>
+        <sys_id>bb67547a07155110d44bf16c7c1ed02b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-08-17 09:58:22</sys_updated_on>
+        <value>standard_ui</value>
+        <variable display_value="Form UI">946f3c1a0f23330072e6452bc4767eda</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>d217907a07155110d44bf16c7c1ed0b2</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-08-17 09:58:22</sys_created_on>
+        <sys_id>bf67547a07155110d44bf16c7c1ed02b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-08-17 09:58:22</sys_updated_on>
+        <value>x_463716_dlh_pdp</value>
+        <variable display_value="Table">424ca6465320220002c6435723dc34b5</variable>
+    </sys_variable_value>
+</record_update>

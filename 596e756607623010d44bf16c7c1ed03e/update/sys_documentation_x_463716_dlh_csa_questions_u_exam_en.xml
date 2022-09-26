@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="u_exam" label="exam" language="en" table="x_463716_dlh_csa_questions">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_exam</element>
+            <help/>
+            <hint/>
+            <label>exam</label>
+            <language>en</language>
+            <name>x_463716_dlh_csa_questions</name>
+            <plural>exams</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>zdravko.verguilov</sys_created_by>
+            <sys_created_on>2021-10-16 12:56:42</sys_created_on>
+            <sys_id>d253126407137010d44bf16c7c1ed061</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>exam</sys_name>
+            <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+            <sys_update_name>sys_documentation_x_463716_dlh_csa_questions_u_exam_en</sys_update_name>
+            <sys_updated_by>zdravko.verguilov</sys_updated_by>
+            <sys_updated_on>2021-10-16 12:56:42</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

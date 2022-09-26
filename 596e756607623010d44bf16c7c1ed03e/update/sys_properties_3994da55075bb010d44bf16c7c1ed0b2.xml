@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description/>
+        <ignore_cache>true</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_463716_dlh.test.passing.percentage</name>
+        <read_roles/>
+        <suffix>test.passing.percentage</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>zdravko.verguilov</sys_created_by>
+        <sys_created_on>2021-10-18 20:58:35</sys_created_on>
+        <sys_id>3994da55075bb010d44bf16c7c1ed0b2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_463716_dlh.test.passing.percentage</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_properties_3994da55075bb010d44bf16c7c1ed0b2</sys_update_name>
+        <sys_updated_by>zdravko.verguilov</sys_updated_by>
+        <sys_updated_on>2021-10-18 20:58:35</sys_updated_on>
+        <type>integer</type>
+        <value>79</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=3994da55075bb010d44bf16c7c1ed0b2"/>
+</record_update>

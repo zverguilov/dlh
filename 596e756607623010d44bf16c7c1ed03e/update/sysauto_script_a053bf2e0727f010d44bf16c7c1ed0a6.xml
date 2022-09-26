@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time/>
+        <name>f7227f2e0727f010d44bf16c7c1ed0bd</name>
+        <offset/>
+        <offset_type>0</offset_type>
+        <run_as display_value="Zdravko Verguilov">88ba31af07657010d44bf16c7c1ed01e</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek/>
+        <run_period/>
+        <run_start>2021-11-04 11:19:34</run_start>
+        <run_time/>
+        <run_type>once</run_type>
+        <script><![CDATA[new global.MLUpdater().update("ml_x_463716_x_463716_dlh_global_assessment_questions");]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>zdravko.verguilov</sys_created_by>
+        <sys_created_on>2021-11-04 11:19:34</sys_created_on>
+        <sys_id>a053bf2e0727f010d44bf16c7c1ed0a6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>f7227f2e0727f010d44bf16c7c1ed0bd</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sysauto_script_a053bf2e0727f010d44bf16c7c1ed0a6</sys_update_name>
+        <sys_updated_by>zdravko.verguilov</sys_updated_by>
+        <sys_updated_on>2021-11-04 11:19:34</sys_updated_on>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

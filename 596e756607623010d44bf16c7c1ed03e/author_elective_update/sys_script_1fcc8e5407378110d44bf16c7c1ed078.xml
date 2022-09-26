@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="DELETE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>true</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>sys_user</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition/>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Testing TD</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	var gr = new GlideRecord("x_463716_dlh_pdp");
+gr.addQuery("employee", current.sys_id);
+gr.query();
+if (gr.next()) {
+   gs.info("td " + gr.number);
+}
+
+	g_form.setValue('u_pdp', gr.number);
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>Tsvetan.dimitrov@doitwise.com</sys_created_by>
+        <sys_created_on>2022-05-27 10:34:25</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1fcc8e5407378110d44bf16c7c1ed078</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>Testing TD</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_script_1fcc8e5407378110d44bf16c7c1ed078</sys_update_name>
+        <sys_updated_by>Tsvetan.dimitrov@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-05-27 11:01:25</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="DELETE" query="documentkey=1fcc8e5407378110d44bf16c7c1ed078"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="DLH">596e756607623010d44bf16c7c1ed03e</application>
+        <file_path/>
+        <instance_id>1d64aec2db06f3082f68c597059619f0</instance_id>
+        <instance_name>dev87737</instance_name>
+        <name>sys_script_1fcc8e5407378110d44bf16c7c1ed078</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;true&lt;/action_delete&gt;&lt;action_insert&gt;true&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;sys_user&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition/&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;Testing TD&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+	var gr = new GlideRecord("x_463716_dlh_pdp");
+gr.addQuery("employee", current.sys_id);
+gr.query();
+if (gr.next()) {
+   gs.info("td " + gr.number);
+}
+
+	g_form.setValue('u_pdp', gr.number);
+
+})(current, previous);]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;Tsvetan.dimitrov@doitwise.com&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2022-05-27 10:34:25&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;1fcc8e5407378110d44bf16c7c1ed078&lt;/sys_id&gt;&lt;sys_mod_count&gt;14&lt;/sys_mod_count&gt;&lt;sys_name&gt;Testing TD&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="DLH" source="x_463716_dlh"&gt;596e756607623010d44bf16c7c1ed03e&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="DLH"&gt;596e756607623010d44bf16c7c1ed03e&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_1fcc8e5407378110d44bf16c7c1ed078&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;Tsvetan.dimitrov@doitwise.com&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2022-05-27 11:01:25&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;after&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=1fcc8e5407378110d44bf16c7c1ed078"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-553602659</payload_hash>
+        <record_name>Testing TD</record_name>
+        <reverted_from/>
+        <source>4942cb5907228110d44bf16c7c1ed0f1</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>Tsvetan.dimitrov@doitwise.com</sys_created_by>
+        <sys_created_on>2022-05-27 11:01:25</sys_created_on>
+        <sys_id>7b73d25c07378110d44bf16c7c1ed002</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>181052da26d0000001</sys_recorded_at>
+        <sys_updated_by>Tsvetan.dimitrov@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-05-27 11:01:25</sys_updated_on>
+        <type>Business Rule</type>
+        <update_guid>bf73d25cbb3781102ee2de7591479201</update_guid>
+        <update_guid_history>bf73d25cbb3781102ee2de7591479201:-553602659,ba13da1ccf37811000b0dd499f92373a:-1323468687,06821ed81b378110c80d6f5520d7d1b1:1279890582,e5521ed8f3378110cf15c58073d0a418:415150940,1d225ad8d53781107460fe966fcbea80:707102317,9de116d85d3781108b8792eefde3e665:1668147373,5e819e98df378110cd20317078ab1cc9:-1081433206,4d319698a7378110f50a650d44f4e8f5:-538456967,61f05a181f3781102e79210c3439c262:-1387859571,63bec6183e37811011b8fa7a97fed3a4:415150940,148e421831378110ae9c9ba73ac04c07:821527672,ae3e4ed4c73781103205be3c8fd3b118:1876991768,d4fd46d462378110bbbc5c8bfa7a38f2:415150940,aaad0e94f337811097e537c5e292e055:-1052026551,585d8e94c7378110d71790d4dda64157:1452283641</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>Tsvetan.dimitrov@doitwise.com</sys_created_by>
+        <sys_created_on>2022-05-27 12:01:14</sys_created_on>
+        <sys_db_object display_value="" name="sys_script">sys_script</sys_db_object>
+        <sys_id>173dfb13cc6240b8b9ca5dd10bfcac64</sys_id>
+        <sys_metadata>1fcc8e5407378110d44bf16c7c1ed078</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Testing TD</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_parent display_value="Sys User">5a9cf8036d2220100acb70b353433038</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_scope_delete display_value="">011918382f754bdf81628cb5cbdc96c1</sys_scope_delete>
+        <sys_update_name>sys_script_1fcc8e5407378110d44bf16c7c1ed078</sys_update_name>
+        <sys_update_version display_value="sys_script_1fcc8e5407378110d44bf16c7c1ed078">7b73d25c07378110d44bf16c7c1ed002</sys_update_version>
+        <sys_updated_by>Tsvetan.dimitrov@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-05-27 12:01:14</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

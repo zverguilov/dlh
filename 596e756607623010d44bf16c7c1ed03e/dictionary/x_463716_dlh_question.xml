@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Question" max_length="40" name="x_463716_dlh_question" sizeclass="247" type="collection">
+        <element label="Answer type" max_length="4000" name="answer_type" type="glide_list"/>
+        <element label="Body" max_length="1024" name="body" type="html"/>
+        <element choice="1" label="Certificates" max_length="4000" name="certificates" type="glide_list">
+            <choice>
+                <element inactive_on_update="false" label="CSA" sequence="1" value="csa"/>
+                <element inactive_on_update="false" label="CAD" sequence="2" value="cad"/>
+            </choice>
+        </element>
+        <element label="Correct answer(s)" max_length="1024" name="correct_answers" type="string"/>
+        <element label="Flag" max_length="40" name="flag" type="boolean"/>
+        <element label="Flag reason" max_length="1024" name="flag_reason" type="string_full_utf8"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+    </element>
+</database>

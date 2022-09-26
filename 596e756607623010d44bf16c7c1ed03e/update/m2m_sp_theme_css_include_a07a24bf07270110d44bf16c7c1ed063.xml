@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_theme_css_include">
+    <m2m_sp_theme_css_include action="INSERT_OR_UPDATE">
+        <order>10</order>
+        <sp_css_include display_value="sp-theme-stock-high-contrast.css">78e17bc277002300a6e592718a10612b</sp_css_include>
+        <sp_theme display_value="DIW La Jolla">da3ae4bf07270110d44bf16c7c1ed0bd</sp_theme>
+        <sys_class_name>m2m_sp_theme_css_include</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-05-25 14:05:29</sys_created_on>
+        <sys_id>a07a24bf07270110d44bf16c7c1ed063</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>sp-theme-stock-high-contrast.css.DIW La Jolla</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>m2m_sp_theme_css_include_a07a24bf07270110d44bf16c7c1ed063</sys_update_name>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-05-25 14:05:55</sys_updated_on>
+    </m2m_sp_theme_css_include>
+</record_update>

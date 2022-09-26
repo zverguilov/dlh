@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>active</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>(BP) Close Mandatory on Close or Resolve</name>
+        <order/>
+        <script><![CDATA[function onSubmit() {
+   var action = g_form.getActionName();
+   if (action != 'close_incident' && action != 'resolve_incident')
+      return;
+
+   // Close notes and Close code must be on the form
+   if (!g_form.hasField('close_notes') || !g_form.hasField('close_code'))
+      return;
+
+   var state = '6';
+   if (action == 'close_incident')
+      state = '7';
+
+   g_form.setValue('incident_state', state);
+   g_form.setValue('state', state);
+   g_form.setDisplay('close_notes', true);
+   g_form.setMandatory('close_notes', true);
+   g_form.setDisplay('close_code', true);
+   g_form.setMandatory('close_code', true);
+   if (g_form.getValue('close_notes') == '' || g_form.getValue('close_code') == '')
+      return false;
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-03-29 10:55:34</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>7a5cd25507ae4110d44bf16c7c1ed068</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>(BP) Close Mandatory on Close or Resolve</sys_name>
+        <sys_overrides display_value="">global</sys_overrides>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_script_client_7a5cd25507ae4110d44bf16c7c1ed068</sys_update_name>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-03-29 10:55:34</sys_updated_on>
+        <table>incident</table>
+        <type>onSubmit</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

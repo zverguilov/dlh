@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_view">
+    <sys_ui_view action="INSERT_OR_UPDATE">
+        <group/>
+        <hidden>false</hidden>
+        <name>dlh_default_view</name>
+        <roles/>
+        <sys_class_name>sys_ui_view</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-04-06 10:34:33</sys_created_on>
+        <sys_id>7444a73f07220110d44bf16c7c1ed02c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>DLH Default view</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_ui_view_7444a73f07220110d44bf16c7c1ed02c</sys_update_name>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-04-06 10:34:33</sys_updated_on>
+        <title>DLH Default view</title>
+        <user/>
+    </sys_ui_view>
+</record_update>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="suggested_by" table="x_463716_dlh_pd_task" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>suggested_by</element>
+            <name>x_463716_dlh_pd_task</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-02-21 21:37:20</sys_created_on>
+            <sys_id>a806d37907710110d44bf16c7c1ed09c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>suggested_by</sys_name>
+            <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+            <sys_update_name>sys_choice_x_463716_dlh_pd_task_suggested_by</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-02-21 21:37:20</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>suggested_by</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Employee</label>
+            <language>en</language>
+            <name>x_463716_dlh_pd_task</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-02-21 21:37:20</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6006d37907710110d44bf16c7c1ed09c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-02-21 21:37:20</sys_updated_on>
+            <value>employee</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>suggested_by</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Manager</label>
+            <language>en</language>
+            <name>x_463716_dlh_pd_task</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2022-02-21 21:37:20</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a006d37907710110d44bf16c7c1ed09f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2022-02-21 21:37:20</sys_updated_on>
+            <value>manager</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

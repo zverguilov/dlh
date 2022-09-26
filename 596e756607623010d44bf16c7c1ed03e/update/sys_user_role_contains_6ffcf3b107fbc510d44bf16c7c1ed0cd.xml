@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role_contains">
+    <sys_user_role_contains action="INSERT_OR_UPDATE">
+        <contains display_value="x_463716_dlh.individual_contributor" name="x_463716_dlh.individual_contributor">7a2b75bf0732c110d44bf16c7c1ed028</contains>
+        <role display_value="x_463716_dlh.manager" name="x_463716_dlh.manager">79abbd7f0732c110d44bf16c7c1ed0c2</role>
+        <sys_class_name>sys_user_role_contains</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-06-01 10:33:14</sys_created_on>
+        <sys_id>6ffcf3b107fbc510d44bf16c7c1ed0cd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_463716_dlh.individual_contributor.x_463716_dlh.manager</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_user_role_contains_6ffcf3b107fbc510d44bf16c7c1ed0cd</sys_update_name>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-06-01 10:33:14</sys_updated_on>
+    </sys_user_role_contains>
+</record_update>

@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $window) {
+	/* widget controller */
+	var c = this;
+	c.data.user_id = $scope.user.sys_id
+
+	$scope.review = false;
+	$scope.progress = 0;
+	$scope.value = $scope.progress + 1;
+	$scope.answers = {};
+	$scope.answeredCount = 0;
+	$scope.markedValues = {};
+	$scope.red = {};
+	$scope.green = {};
+	$scope.flag = false;
+	$scope.flagReason = '';
+
+	$scope.time_remaining = $scope.data.time_finished;
+
+	c.countAnswers = function(array) {
+		var count = 0;
+
+		if(array) {
+			array.forEach(function(element) {
+				count += element == 1 ? 1 : 0;
+			})
+		}
+
+		return count;
+	}
+
+	c.switchFlag = function() {
+		$scope.flag = !$scope.flag;
+	}
+
+	c.flag = function(id, reason) {
+		c.data.action = 'flag';
+		c.data.question = id;
+		c.data.comment = reason;
+
+		c.server.update().then(function() {
+			alert('Your comment was submitted and the question will be reviewed shortly. Thank you for your feedback!');
+			$scope.flag = false;
+		})
+
+
+	}
+
+	c.review = function() {
+		$scope.review = true;
+	}
+
+	c.returnToQuestion = function(index) {
+		$scope.progress = index;
+		$scope.value = $scope.progress + 1;
+		$scope.review = false;
+	}
+
+	c.stringifyAnswer = function(index) {
+		var length = $scope.data.questionArray[index].cAns.split(',').length;
+		var answerString = '';
+
+		$scope.data.questionArray[index].cAns.split(',').forEach(function(element, i) {
+			if($scope.data.questionArray[index].ansType === 'single') {
+				answerString += $scope.answers[index] == i ? 1 : 0;
+			} else {
+				answerString += $scope.answers[index][i] ? 1 : 0;
+			}
+		})
+
+		return answerString.split('').toString();
+	}
+
+	c.mark = function(index) {
+		if($scope.markedValues[index]) {
+			c.data.action = 'mark';
+			c.data.instance = index;
+			c.server.update();
+		}
+	}
+
+	c.answer = function(index) {
+		if($scope.answers[index]) {
+			c.data.action = 'answer';
+			c.data.instance = index;
+			c.data.answer = c.stringifyAnswer(index);
+			c.server.update().then(function(res) {
+				if(res.resValue) {
+					$scope.answeredCount = $scope.data.questionArray.filter(function(element) {
+						return element.uAns;
+					}).length;
+				}
+			});
+		}
+	}
+
+	c.next = function(index) {
+		var count = 0;
+		var numberOfAnswers = c.countAnswers($scope.data.questionArray[$scope.progress].cAns.split(','))
+
+		for(var e in $scope.answers[$scope.progress]) {
+			count += $scope.answers[$scope.progress][e] ? 1 : 0;
+		}
+
+		if(numberOfAnswers > 1) {
+			if(numberOfAnswers != count) {
+				alert('Please provide ' + numberOfAnswers + ' answers!');
+			} else {
+				$scope.progress++;
+				$scope.value++;
+			}
+		} else {
+			if(!$scope.answers[$scope.progress]) {
+				alert('Please provide an answer!')
+			} else {
+				$scope.progress++;
+				$scope.value++;
+			}			
+		}		
+	}
+
+	c.parseAnswers = function() {
+		if($scope.data.questionArray) {
+			$scope.data.questionArray.forEach(function(element, i) {
+				if(element.uAns) {
+					if(element.ansType === 'multiple') {						
+						$scope.answers[i] = element.uAns.split(',').reduce(function(acc, item, index) {
+							acc[index] = item == 1 ? true : false;
+							return acc;
+						}, {})
+					} else {
+						element.uAns.split(',').forEach(function(item, e) {
+							if(item == 1) {
+								$scope.answers[i] = e.toString();
+							}
+						});
+					}
+				}
+			})
+		}
+	}
+
+	c.parseMarks = function() {
+		if($scope.data.questionArray) {
+			$scope.data.questionArray.forEach(function(element, i) {
+				if(element.mark) {
+					if(element.mark == 'true') {
+						$scope.markedValues[i] = true;
+					}
+				}
+			})
+		}
+	}
+
+	c.reportColors = function() {
+		$scope.data.questionArray.forEach(function(element, i) {
+			$scope.green[i] = {};
+			$scope.red[i] = {};
+			if(element.ansType === 'single') {
+				element.cAns.split(',').forEach(function(item, e) {
+					$scope.green[i][e] = item == 1 ? true : false;
+				})
+				if(element.uAns) {
+					element.uAns.split(',').forEach(function(item, e) {
+						$scope.red[i][e] = item == 1 ? true : false;
+					})
+				}
+
+			} else {
+				element.cAns.split(',').forEach(function(item, e) {
+					if(element.uAns) {
+						var uAns = element.uAns.split(',');
+						$scope.red[i][e] = (uAns[e] == 1 && item != uAns[e]) ?
+							true : false;
+					}					
+					$scope.green[i][e] = (item == 1) ?
+						true : false;
+
+				})
+			}
+		});
+	}
+
+	c.ansCount = function() {
+		var count = 0;
+
+		if($scope.data.questionArray) {
+			while(count < $scope.data.questionArray.length) {
+				$scope.answers[count] = '';
+				count++;
+			}
+
+			$scope.data.questionArray.forEach(function(item, i) {
+				$scope.answeredCount += item.uAns ? 1 : 0;
+			})
+		}
+	}
+
+	c.submit = function(alertOption) {
+
+		if(alertOption && $scope.answeredCount < $scope.data.questionArray.length) {
+			if(confirm('There are still questions left unanswered. Are you sure?')) {
+				c.data.action = 'submit';
+				c.server.update().then(function() {
+					c.parseAnswers();
+					c.reportColors();
+				});
+			}
+		} 
+
+		if(!alertOption) {
+			c.data.action = 'submit';
+			c.server.update().then(function() {
+				c.parseAnswers();
+				c.reportColors();
+			});
+		}
+
+		if($scope.answeredCount == $scope.data.questionArray.length) {
+			c.data.action = 'submit';
+			c.server.update().then(function() {
+				c.parseAnswers();
+				c.reportColors();
+			});
+		}
+	}
+
+	if($scope.time_remaining <= 0) {
+		c.submit(false)
+	}
+
+	setInterval(function() {
+		if($scope.time_remaining > 0) {
+			$scope.time_remaining--;
+		}	
+
+		if($scope.time_remaining == 0) {
+			c.submit(false)
+		}
+	}, 60000)
+
+	c.ansCount();
+
+	if($scope.data.status === 'finished') {
+		$scope.data.questionArray = $scope.data.questionArray.filter(function(element) {
+			return element.correct == false;
+		})
+
+		c.reportColors();
+	}
+
+	c.parseAnswers();
+	c.parseMarks();
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&amp;display=swap");
+
+h1, h3, h4, label, span, button, textarea {
+	font-family: Montserrat;
+}
+
+#reviewContainer, .legendBox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#legendBlue, #legendYellow {
+  border: 1px solid black;
+  height: 1rem;
+  width: 1rem;
+  margin: .5rem;
+}
+
+#legendBlue {
+  background-color: lightblue;
+}
+
+#legendYellow {
+  background-color: yellow;
+}
+
+#grade {
+	display: flex;
+  justify-content: center;
+}
+
+h1 {
+	padding: .2rem .5rem .2rem .5rem;
+  border-radius: 3px;
+}
+
+button {
+	margin: .5rem .5rem 5rem .5rem;
+}
+
+.red {
+  background-color: rgba(220, 20, 60, .2);
+}
+
+.green {
+	background-color: rgba(0, 255, 0, .2);
+}
+
+#answerContainer {
+  margin: 2rem;
+}
+
+.disabled {
+  disabled: true;
+}
+
+.reviewBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 3rem;
+  margin: .5rem;
+  border: 1px solid grey;
+  border-radius: 2px;  
+}
+
+.answered {
+  box-shadow: 1px 0px 5px 1px lightblue, 0px 1px 5px 1px lightblue, -1px 0px 5px 1px lightblue, 0px -1px 5px 1px lightblue;
+}
+
+.marked {
+  box-shadow: 1px 0px 5px 1px yellow, 0px 1px 5px 1px yellow, -1px 0px 5px 1px yellow, 0px -1px 5px 1px yellow;
+}
+
+.unanswered {
+  pointer-events: none;
+}
+
+label {
+  white-space:nowrap;
+	padding: .2rem 1rem .2rem 1rem;
+  border-radius: 3px;
+}
+
+.wrappable {
+  white-space:normal;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>dlh_assessment</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>DLH Assessment Tool</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_463716_dlh.assessment</roles>
+        <script><![CDATA[(function() {
+	
+	
+	
+	var submitAssessment = function(exam_id) {
+		var exam = new GlideRecord('x_463716_dlh_test');
+		exam.get(exam_id);
+		
+		exam.submitted = true;
+		exam.status = 'finished';
+		exam.update();
+	}
+	
+	var flagQuestion = function(id, comment) {
+		var question = new GlideRecord('x_463716_dlh_question');
+		question.get(id);
+		
+		question.flag = true;
+		question.flag_reason = comment;
+		
+		question.update();
+	}
+
+	var updateQuestionInstance = function(index, action, answer) {
+		data.resValue = '';
+		
+		var instance = new GlideRecord('x_463716_dlh_question_instance');
+		instance.get(data.questionArray[index].sys_id);
+		
+		if(action === 'answer') {
+			instance.answer = gs.base64Encode(new GlideDateTime() + ' / ' + answer);
+		}
+		if(action === 'mark') {
+			instance.marked = true;
+		}
+
+		data.resValue = instance.update();
+	}
+
+	var getQA = function(exam_id, query) {
+		var questionInstance = new GlideRecord('x_463716_dlh_question_instance');
+		questionInstance.addEncodedQuery('test=' + exam_id);
+		if(query) {
+			questionInstance.addEncodedQuery(query);
+		}
+		questionInstance.query();
+
+		data.questionArray = [];
+
+		while(questionInstance.next()) {
+
+			var answer = new GlideRecord('x_463716_dlh_answer');
+			answer.addEncodedQuery('question=' + questionInstance.question);
+			answer.orderBy('order');
+			answer.query();
+
+			var answers = [];
+
+			while(answer.next()) {
+				answers.push({
+					body: answer.body.toString(),
+					order: answer.order.toString()
+				});
+			}
+
+			data.questionArray.push({
+				sys_id: questionInstance.sys_id.toString(),
+				question_id: questionInstance.question.toString(),
+				mark: questionInstance.marked.toString(),
+				qBody: questionInstance.question.body.toString(),
+				cAns: gs.base64Decode(questionInstance.question.correct_answers).split(' / ')[1],
+				correct: questionInstance.correct ? true : false,
+				ans: answers,
+				uAns: questionInstance ? gs.base64Decode(questionInstance.answer).split(' / ')[1] : '',
+				ansType: questionInstance.question.answer_type.toString()
+			})
+		}
+	}
+
+	var getExam = function(exam_id) {
+		var exam = new GlideRecord('x_463716_dlh_test');
+		exam.get(exam_id);
+
+		data.canSee = gs.hasRole('x_463716_dlh.assessment_admin') || gs.getUserID() == exam.assigned_to;
+		data.exam = exam;
+		data.grade = exam.grade ? exam.grade.toString() : '';
+		data.pass = exam.pass ? true : false;
+		data.status = exam.status.toString();
+	}
+
+	data.minutes = gs.getProperty('x_463716_dlh.test.minutes');
+
+	if($sp.getParameter('exam_id')) {
+		getExam($sp.getParameter('exam_id'));
+		getQA($sp.getParameter('exam_id'));
+
+		data.time_finished = Math.ceil((new GlideDateTime(data.exam.time_finished).getNumericValue() - new GlideDateTime().getNumericValue()) / 60000);
+	}
+
+	if(input && input.action) {
+		if(input.action === 'answer') {
+			updateQuestionInstance(input.instance, input.action, input.answer);
+			getQA($sp.getParameter('exam_id'));
+		}
+
+		if(input.action === 'mark') {
+			updateQuestionInstance(input.instance, input.action);
+			getQA($sp.getParameter('exam_id'));
+		}
+		
+		if(input.action === 'submit') {
+			submitAssessment($sp.getParameter('exam_id'));
+			getQA($sp.getParameter('exam_id'), 'correct=false');
+			getExam($sp.getParameter('exam_id'));
+		}
+		
+		if(input.action === 'flag') {
+			flagQuestion(input.question, input.comment)
+		}
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>zdravko.verguilov</sys_created_by>
+        <sys_created_on>2021-10-16 19:34:05</sys_created_on>
+        <sys_id>de1e632c07177010d44bf16c7c1ed0c6</sys_id>
+        <sys_mod_count>453</sys_mod_count>
+        <sys_name>DLH Assessment Tool</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sp_widget_de1e632c07177010d44bf16c7c1ed0c6</sys_update_name>
+        <sys_updated_by>zdravko.verguilov</sys_updated_by>
+        <sys_updated_on>2021-11-03 12:28:42</sys_updated_on>
+        <template><![CDATA[<div ng-if="!data.canSee">
+  <h3>
+    Access denied
+  </h3>
+</div>
+<div ng-if="data.canSee">
+  <div ng-if="data.status != 'finished'">
+    <div ng-if="!review">
+      <h4 ng-if="data.status == 'ongoing'"
+          ng-bind-html="'Question ' + value + ' of '
+                        + data.questionArray.length + ', '
+                        + time_remaining + ' minutes remaining'"></h4>
+
+      <h3 ng-bind-html="data.questionArray[progress].qBody"></h3>
+      <div nf-if="data.questionArray[progress].ansType === 'multiple'">
+        <p ng-bind-html="c.countAnswers(data.questionArray[progress].cAns.split(',')) + ' answers:'"
+           ng-if="data.questionArray[progress].ansType === 'multiple'"></p>
+      </div>
+      <div id="answerContainer">
+        <div ng-repeat="answer in data.questionArray[progress].ans"
+             ng-if="data.questionArray[progress].ansType === 'single'">
+
+          <label>
+            <input type="radio"
+                   id="answer.body"
+                   name="answer"
+                   value="{{answer.order}}"
+                   ng-model="answers[progress]"
+                   ng-change="c.answer(progress)">
+            <span class="wrappable"
+                  ng-bind-html="answer.body"></span>
+          </label>        
+        </div>
+        <div ng-repeat="answer in data.questionArray[progress].ans"
+             ng-if="data.questionArray[progress].ansType === 'multiple'">
+
+          <label>
+            <input type="checkbox"
+                   id="answer.body"
+                   name="answer"
+                   ng-model="answers[progress][answer.order]"
+                   ng-change="c.answer(progress)">
+            <span class="wrappable"
+                  ng-bind-html="answer.body"></span>
+          </label>        
+        </div>
+      </div>
+      <div ng-if="data.status === 'ongoing'">
+        <label for="markForReview">
+          <input type="checkbox"
+                 ng-model="markedValues[progress]"
+                 id="markForReview"
+                 ng-change="c.mark(progress)"/>
+          Mark question for review
+        </label>           
+      </div>
+
+      <div>
+        <button ng-click="c.next(progress)"
+                ng-if="data.status === 'ongoing'"
+                ng-disabled="progress == data.questionArray.length-1">
+          Next question
+        </button>
+        <button ng-click="c.review()"
+                ng-if="data.status === 'ongoing'">
+          Review questions
+        </button>
+        <button 
+                ng-click="c.submit(true)">
+          Submit assessment
+        </button>
+      </div>
+      <div>
+        <label for="flag">
+          <input id="flag"
+                 ng-click="c.switchFlag()"
+                 ng-checked="flag"
+                 type="checkbox"
+                 />
+          Flag question
+        </label>
+      </div>
+      <div ng-if="flag">
+        <label for="flagReason">
+          <textarea id=flagReason
+                    ng-model="flagReason"
+                    rows="5" cols="40">
+          </textarea>
+        </label>
+        <input type=submit
+               value=Submit
+               ng-click="c.flag(data.questionArray[progress].question_id, flagReason)"/>
+      </div>
+    </div>
+    <div ng-if="review"
+         id="reviewContainer">
+      <div ng-repeat="question in data.questionArray track by $index"
+           ng-click="c.returnToQuestion($index)"
+           ng-class="{answered: answers[$index],
+                     marked: markedValues[$index],
+                     unanswered: !answers[$index]}"
+           class="reviewBox">{{$index + 1}}</div>
+    </div>
+    <div ng-if="review">
+      <div class="legendBox">
+        <div id="legendBlue"></div>
+        <p>Answered</p>
+      </div>
+      <div class="legendBox">
+        <div id="legendYellow"></div>
+        <p>Marked for review</p>
+      </div>
+    </div>
+  </div>
+  <div ng-if="data.status === 'finished'">
+    <div id="grade">
+      <div>
+        <h1>
+          Grade:
+        </h1> 
+      </div>
+      <div>
+        <h1 ng-class="{red: !data.pass,
+                      green: data.pass}">
+          {{data.grade}}
+        </h1>
+      </div>
+    </div>
+    <div ng-repeat="question in data.questionArray track by $index">
+      <h3 ng-bind-html="question.qBody"></h3>
+      <div id="answerContainer">
+        <div ng-repeat="answer in question.ans"
+             ng-if="question.ansType === 'single'">
+
+          <label for="{{question.qBody}}"
+                 ng-class="{red: red[$parent.$parent.$index][answer.order],
+                           green: green[$parent.$parent.$index][answer.order]}">
+            <input type="radio"
+                   name="{{question.qBody}}"
+                   value="{{answer.order}}"
+                   ng-model="answers[$parent.$parent.$index]"
+                   ng-disabled="true">
+            <span class="wrappable"
+                  ng-bind-html="answer.body"></span>
+          </label>        
+        </div>
+        <div ng-repeat="answer in question.ans"
+             ng-if="question.ansType === 'multiple'">
+
+          <label ng-class="{red: red[$parent.$parent.$index][answer.order],
+                           green: green[$parent.$parent.$index][answer.order]}">
+            <input type="checkbox"
+                   name="answer"
+                   ng-model="answers[$parent.$parent.$index][answer.order]"
+                   ng-disabled="true">
+            <span class="wrappable"
+                  ng-bind-html="answer.body"></span>
+          </label>        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+]]></template>
+    </sp_widget>
+</record_update>

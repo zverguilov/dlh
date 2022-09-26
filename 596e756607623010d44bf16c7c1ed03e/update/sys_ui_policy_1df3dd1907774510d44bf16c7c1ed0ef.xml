@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_policy">
+    <sys_ui_policy action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <conditions table="x_463716_dlh_pd_goal">blocked=true^EQ<item endquery="false" field="blocked" goto="false" newquery="false" operator="=" or="false" value="true"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </conditions>
+        <description/>
+        <global>true</global>
+        <inherit>true</inherit>
+        <isolate_script>true</isolate_script>
+        <model_id/>
+        <model_table/>
+        <on_load>true</on_load>
+        <order>100</order>
+        <reverse_if_false>true</reverse_if_false>
+        <run_scripts>true</run_scripts>
+        <script_false><![CDATA[function onCondition() {
+}]]></script_false>
+        <script_true><![CDATA[function onCondition() {
+}]]></script_true>
+        <set_values/>
+        <short_description>hide blocked</short_description>
+        <sys_class_name>sys_ui_policy</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-05-30 08:59:48</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1df3dd1907774510d44bf16c7c1ed0ef</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>hide blocked</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_ui_policy_1df3dd1907774510d44bf16c7c1ed0ef</sys_update_name>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-05-30 09:05:32</sys_updated_on>
+        <table>x_463716_dlh_pd_goal</table>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_ui_policy>
+</record_update>

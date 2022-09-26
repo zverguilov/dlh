@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_463716_dlh.reporting" name="x_463716_dlh.reporting">11fbfdbf0732c110d44bf16c7c1ed0cc</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-04-18 13:14:47</sys_created_on>
+        <sys_id>410c7dbf0732c110d44bf16c7c1ed0de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>11fbfdbf0732c110d44bf16c7c1ed0cc</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_embedded_help_role_410c7dbf0732c110d44bf16c7c1ed0de</sys_update_name>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-04-18 13:14:47</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

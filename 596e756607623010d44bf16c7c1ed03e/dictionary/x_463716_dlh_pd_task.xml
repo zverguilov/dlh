@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" label="PD Task" max_length="40" name="x_463716_dlh_pd_task" sizeclass="2" type="collection">
+        <element choice="3" default="manager" label="Suggested by" max_length="40" name="suggested_by" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Employee" sequence="0" value="employee"/>
+                <element inactive_on_update="false" label="Manager" sequence="1" value="manager"/>
+            </choice>
+        </element>
+        <element choice="3" default="other" label="Type" mandatory="true" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Assessment" sequence="0" value="assessment"/>
+                <element inactive_on_update="false" label="Training" sequence="1" value="training"/>
+                <element inactive_on_update="false" label="Event" sequence="2" value="event"/>
+                <element inactive_on_update="false" label="Certification" sequence="3" value="certification"/>
+                <element inactive_on_update="false" label="Other" sequence="4" value="other"/>
+            </choice>
+        </element>
+    </element>
+</database>

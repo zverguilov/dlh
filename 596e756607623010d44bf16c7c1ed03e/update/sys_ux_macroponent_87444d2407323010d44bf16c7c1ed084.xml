@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_macroponent">
+    <sys_ux_macroponent action="INSERT_OR_UPDATE">
+        <associated_types/>
+        <category>macroponent</category>
+        <component_dependencies/>
+        <composition>[ {
+  "elementId" : "container_1",
+  "elementLabel" : "Container 1",
+  "propertyValues" : { },
+  "eventMappings" : [ ],
+  "slot" : "Main",
+  "definition" : {
+    "id" : "d356d14b6e293a3020a244b63d278d8f",
+    "type" : "MACROPONENT"
+  },
+  "overrides" : {
+    "composition" : [ {
+      "elementId" : "form_1",
+      "elementLabel" : "Form 1",
+      "propertyValues" : {
+        "table" : {
+          "type" : "JSON_LITERAL",
+          "value" : "incident"
+        },
+        "sysId" : {
+          "type" : "JSON_LITERAL",
+          "value" : null
+        },
+        "view" : {
+          "type" : "JSON_LITERAL",
+          "value" : null
+        },
+        "forcedViewName" : {
+          "type" : "JSON_LITERAL",
+          "value" : ""
+        },
+        "sections" : {
+          "type" : "JSON_LITERAL",
+          "value" : ""
+        },
+        "fields" : {
+          "type" : "JSON_LITERAL",
+          "value" : ""
+        },
+        "isSectionMenuHidden" : {
+          "type" : "JSON_LITERAL",
+          "value" : false
+        },
+        "disableCollapse" : {
+          "type" : "JSON_LITERAL",
+          "value" : false
+        },
+        "config" : {
+          "type" : "JSON_LITERAL",
+          "value" : "{ \"showActivityStream\": false, }"
+        },
+        "serializedChanges" : {
+          "type" : "JSON_LITERAL",
+          "value" : [ ]
+        },
+        "encodedRecord" : {
+          "type" : "JSON_LITERAL",
+          "value" : null
+        },
+        "scrollableHost" : {
+          "type" : "JSON_LITERAL",
+          "value" : null
+        },
+        "inUiBuilder" : {
+          "type" : "JSON_LITERAL",
+          "value" : true
+        },
+        "userSession" : {
+          "type" : "CONTEXT_BINDING",
+          "binding" : {
+            "address" : [ "user" ],
+            "category" : "session"
+          }
+        }
+      },
+      "eventMappings" : [ ],
+      "slot" : "Main",
+      "definition" : {
+        "id" : "cdf8d604a3fda59e69ccd6dd407263d6",
+        "type" : "MACROPONENT"
+      },
+      "overrides" : null,
+      "isHidden" : {
+        "type" : "JSON_LITERAL",
+        "value" : ""
+      },
+      "isNonDestructive" : false,
+      "styles" : { }
+    } ],
+    "layout" : {
+      "default" : {
+        "children" : null,
+        "items" : [{"slotName":"Main","rules":{"grid-area":"main"},"styles":{"display":"flex","flex-direction":"column"}}],
+        "root" : null,
+        "rules" : {"grid-template-rows":"auto","grid-template-columns":"1fr","grid-template-areas":"\"main\"","grid-gap":"1rem","height":"100%"},
+        "styles" : null,
+        "templateId" : "5832fd4d53c31010e6bcddeeff7b12db",
+        "type" : "grid"
+      }
+    }
+  },
+  "isHidden" : {
+    "type" : "JSON_LITERAL",
+    "value" : ""
+  },
+  "isNonDestructive" : false,
+  "styles" : {
+    "width" : "100%"
+  }
+} ]</composition>
+        <da_relay_models/>
+        <data>[ ]</data>
+        <dispatched_events/>
+        <extends display_value="Page Template">19be392623033300f4b4c50947bf65ba</extends>
+        <handled_events/>
+        <interactions/>
+        <interfaces/>
+        <internal_event_mappings>{ }</internal_event_mappings>
+        <layout>{
+  "default" : {
+    "children" : null,
+    "items" : [{"slotName":"Main","rules":{"grid-area":"main"},"styles":{"display":"flex","flex-direction":"column"}}],
+    "root" : null,
+    "rules" : {"grid-template-rows":"minmax(400px,auto)","grid-template-columns":"1fr","grid-template-areas":"\"main\"","grid-gap":"1rem","height":"100%"},
+    "styles" : null,
+    "templateId" : "28bde4cd53431010e6bcddeeff7b12cc",
+    "type" : "grid"
+  }
+}</layout>
+        <macroponent_dependencies/>
+        <name>test</name>
+        <props>[ ]</props>
+        <required_translations>[]</required_translations>
+        <root_component/>
+        <root_component_config>{ }</root_component_config>
+        <root_component_definition/>
+        <schema_version>1.0.0</schema_version>
+        <state_properties>[ ]</state_properties>
+        <sys_class_name>sys_ux_macroponent</sys_class_name>
+        <sys_created_by>zdravko.verguilov</sys_created_by>
+        <sys_created_on>2021-09-21 10:39:57</sys_created_on>
+        <sys_id>87444d2407323010d44bf16c7c1ed084</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>test</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_ux_macroponent_87444d2407323010d44bf16c7c1ed084</sys_update_name>
+        <sys_updated_by>zdravko.verguilov</sys_updated_by>
+        <sys_updated_on>2021-09-21 10:41:35</sys_updated_on>
+    </sys_ux_macroponent>
+</record_update>

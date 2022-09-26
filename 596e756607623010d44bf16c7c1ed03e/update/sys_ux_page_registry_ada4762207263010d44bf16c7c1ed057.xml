@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_page_registry">
+    <sys_ux_page_registry action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_panel/>
+        <admin_panel_table/>
+        <auth_routes/>
+        <page display_value="Dirty Little Helper">e983f6ee07e23010d44bf16c7c1ed0c9</page>
+        <path>dlh</path>
+        <root_macroponent/>
+        <sys_class_name>sys_ux_page_registry</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-15 13:43:48</sys_created_on>
+        <sys_id>ada4762207263010d44bf16c7c1ed057</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Dirty Little Helper</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_ux_page_registry_ada4762207263010d44bf16c7c1ed057</sys_update_name>
+        <sys_updated_by>zdravko.verguilov</sys_updated_by>
+        <sys_updated_on>2021-09-21 10:37:02</sys_updated_on>
+        <title>Dirty Little Helper</title>
+    </sys_ux_page_registry>
+</record_update>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="CSA Questions" max_length="40" name="x_463716_dlh_csa_questions" sizeclass="0" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=all answers" label="all answers" max_length="671" name="u_all_answers" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=body" label="body" max_length="221" name="u_body" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=correct answers" label="correct answers" max_length="40" name="u_correct_answers" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=exam" label="exam" max_length="40" name="u_exam" type="string"/>
+        <element attributes="import_attribute_name=id" label="id" max_length="40" name="u_id" type="integer"/>
+    </element>
+</database>

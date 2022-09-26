@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Resolution information" section_id="8e6a5ed107ae4110d44bf16c7c1ed061" sys_domain="global" table="x_463716_dlh_pd_task" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>close_notes</element>
+            <position>0</position>
+            <sys_created_by>teodora.radeva</sys_created_by>
+            <sys_created_on>2022-03-29 10:51:03</sys_created_on>
+            <sys_id>285b9a1507ae4110d44bf16c7c1ed0ee</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Resolution information" display_value="Resolution information" name="x_463716_dlh_pd_task" sys_domain="global" view="Default view">8e6a5ed107ae4110d44bf16c7c1ed061</sys_ui_section>
+            <sys_updated_by>teodora.radeva</sys_updated_by>
+            <sys_updated_on>2022-03-29 10:51:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Resolution information</caption>
+            <header>false</header>
+            <name>x_463716_dlh_pd_task</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>teodora.radeva</sys_created_by>
+            <sys_created_on>2022-03-29 10:47:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8e6a5ed107ae4110d44bf16c7c1ed061</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_463716_dlh_pd_task</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+            <sys_update_name>sys_ui_section_8e6a5ed107ae4110d44bf16c7c1ed061</sys_update_name>
+            <sys_updated_by>teodora.radeva</sys_updated_by>
+            <sys_updated_on>2022-03-29 10:47:03</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

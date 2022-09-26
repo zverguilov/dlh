@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="pa_tabs">
+    <pa_tabs action="INSERT_OR_UPDATE">
+        <canvas_page display_value="PA Goals dashboard - New Tab">81b4fa1d07ee4110d44bf16c7c1ed00f</canvas_page>
+        <name>Goals dashboard - New Tab</name>
+        <page display_value="PA Goals dashboard - New Tab">f4b4fa1d07ee4110d44bf16c7c1ed00d</page>
+        <sys_class_name>pa_tabs</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-03-29 12:41:57</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>89b4fa1d07ee4110d44bf16c7c1ed011</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Goals dashboard - New Tab</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>pa_tabs_89b4fa1d07ee4110d44bf16c7c1ed011</sys_update_name>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-03-29 12:41:57</sys_updated_on>
+    </pa_tabs>
+</record_update>

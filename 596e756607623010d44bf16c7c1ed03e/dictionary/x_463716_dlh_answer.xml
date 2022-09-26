@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Answer" max_length="40" name="x_463716_dlh_answer" sizeclass="963" type="collection">
+        <element display="true" label="Body" max_length="1024" name="body" type="html"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Order" max_length="9" name="order" type="integer"/>
+        <element label="Question" max_length="32" name="question" reference="x_463716_dlh_question" type="reference"/>
+        <index name="index">
+            <element name="question"/>
+        </index>
+    </element>
+</database>

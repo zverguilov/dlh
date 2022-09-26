@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget">
+    <m2m_sp_ng_pro_sp_widget action="DELETE">
+        <sp_angular_provider display_value="scBasicSelect">e225f8b43b0523008ed00d8044efc4fe</sp_angular_provider>
+        <sp_widget display_value="My Goals">c63954cc07334110d44bf16c7c1ed0f1</sp_widget>
+        <sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-05-26 07:28:42</sys_created_on>
+        <sys_id>0239d8cc07334110d44bf16c7c1ed01d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>scBasicSelect.My Goals</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_0239d8cc07334110d44bf16c7c1ed01d</sys_update_name>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-05-26 07:28:42</sys_updated_on>
+    </m2m_sp_ng_pro_sp_widget>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="DLH">596e756607623010d44bf16c7c1ed03e</application>
+        <file_path/>
+        <instance_id>1d64aec2db06f3082f68c597059619f0</instance_id>
+        <instance_name>dev87737</instance_name>
+        <name>m2m_sp_ng_pro_sp_widget_0239d8cc07334110d44bf16c7c1ed01d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget"><m2m_sp_ng_pro_sp_widget action="INSERT_OR_UPDATE"><sp_angular_provider display_value="scBasicSelect">e225f8b43b0523008ed00d8044efc4fe</sp_angular_provider><sp_widget display_value="My Goals">c63954cc07334110d44bf16c7c1ed0f1</sp_widget><sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name><sys_created_by>teodora.radeva</sys_created_by><sys_created_on>2022-05-26 07:28:42</sys_created_on><sys_id>0239d8cc07334110d44bf16c7c1ed01d</sys_id><sys_mod_count>0</sys_mod_count><sys_name>scBasicSelect.My Goals</sys_name><sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package><sys_policy/><sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope><sys_update_name>m2m_sp_ng_pro_sp_widget_0239d8cc07334110d44bf16c7c1ed01d</sys_update_name><sys_updated_by>teodora.radeva</sys_updated_by><sys_updated_on>2022-05-26 07:28:42</sys_updated_on></m2m_sp_ng_pro_sp_widget></record_update>]]></payload>
+        <payload_hash>-57207550</payload_hash>
+        <record_name>scBasicSelect.My Goals</record_name>
+        <reverted_from/>
+        <source>959da94107ee0110d44bf16c7c1ed0fc</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-05-26 21:02:26</sys_created_on>
+        <sys_id>c2731f0c07bb4110d44bf16c7c1ed0d5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>181022d85cb0000001</sys_recorded_at>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-05-26 21:02:26</sys_updated_on>
+        <type>Angular Providers</type>
+        <update_guid>ca731f0cf3bb4110595447d7641052d4</update_guid>
+        <update_guid_history>ca731f0cf3bb4110595447d7641052d4:-57207550,63821fc8afbb411000e5c8082146b7c9:-371522974,0239d8cc41334110b6bdfe3e20bb1e1f:-1164332862</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="scBasicSelect.My Goals">6fa4df4c07bb4110d44bf16c7c1ed0a8</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-05-26 21:07:44</sys_created_on>
+        <sys_db_object display_value="" name="m2m_sp_ng_pro_sp_widget">m2m_sp_ng_pro_sp_widget</sys_db_object>
+        <sys_id>2700c2eafdcb4b86a071a35283e9d7c4</sys_id>
+        <sys_metadata>0239d8cc07334110d44bf16c7c1ed01d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>scBasicSelect.My Goals</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_scope_delete display_value="">011918382f754bdf81628cb5cbdc96c1</sys_scope_delete>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_0239d8cc07334110d44bf16c7c1ed01d</sys_update_name>
+        <sys_update_version display_value="m2m_sp_ng_pro_sp_widget_0239d8cc07334110d44bf16c7c1ed01d">c2731f0c07bb4110d44bf16c7c1ed0d5</sys_update_version>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-05-26 21:07:44</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

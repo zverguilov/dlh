@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function($scope, $window) {
+	/* widget controller */
+	var c = this;
+	c.data.user_id = $scope.user.sys_id
+
+	$scope.training = true;
+	$scope.type = 'CSA';
+
+	c.training = function() {
+		$scope.training = !$scope.training;
+	}
+	
+	c.setType = function(exam_type) {
+		$scope.type = exam_type;
+	}
+
+	c.start = function(exam_type) {
+		c.data.action = 'generate';
+		c.data.type = exam_type;
+		c.server.update().then(function(res) {
+			$window.location.href = $scope.portal.url_suffix + '?id=dlh_assessment&exam_id=' + res.exam;
+		})
+	}
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&amp;display=swap");
+
+#mainContainer {
+	display: flex;
+  justify-content: space-evenly;
+}
+
+h1, h3 {
+	text-align: center;
+  font-family: Montserrat;
+  margin: 1rem;
+}
+
+.mainBox {
+  display: flex;
+	box-shadow: 1px 0px 15px 1px rgba(211,211,211,.3), -1px 0px 15px 2px rgba(211,211,211,.3), 0px 1px 15px 2px rgba(211,211,211,.3), 0px -1px 15px 2px rgba(211,211,211,.3);
+  flex-basis: 10rem;
+  flex-grow: 2;
+  flex-direction: column;
+  margin: 2rem;
+  height: 100px;
+  border-radius: 2px;
+  align-items: center;
+  justify-content: center;
+}
+
+.options {
+	display: none;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>dlh_home</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>DLH Home</name>
+        <option_schema/>
+        <public>false</public>
+        <roles>x_463716_dlh.assessment</roles>
+        <script><![CDATA[(function() {
+	var generate = function(exam_type, user_id) {
+		data.status = 'ongoing';
+
+		var exam = new GlideRecord('x_463716_dlh_test');
+		exam.initialize();
+		exam.assigned_to = user_id;
+		exam.exam = exam_type;
+		exam.status = 'ongoing';
+		exam.time_started = new GlideDateTime();
+		data.exam = exam.insert();
+	}
+
+	if(input && input.action) {
+		if(input.action === 'generate') {
+			generate(input.type, input.user_id)
+		}
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>zdravko.verguilov</sys_created_by>
+        <sys_created_on>2021-10-18 17:21:50</sys_created_on>
+        <sys_id>ad33a1d50797b010d44bf16c7c1ed022</sys_id>
+        <sys_mod_count>69</sys_mod_count>
+        <sys_name>DLH Home</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sp_widget_ad33a1d50797b010d44bf16c7c1ed022</sys_update_name>
+        <sys_updated_by>zdravko.verguilov</sys_updated_by>
+        <sys_updated_on>2021-11-03 12:28:20</sys_updated_on>
+        <template><![CDATA[<div>
+  <div>
+    <h1>
+      Dirty Little Helper Assessment Tool
+    </h1>  
+  </div>
+  <div id="mainContainer">
+    <div class="mainBox">
+      <h3>
+        Assigned Assessments
+      </h3>
+    </div>
+    <div class="mainBox">
+      <h3 ng-if="training"
+          ng-click="c.training()">
+        Training Assessments
+      </h3>
+      <div ng-if="!training">
+        <form>
+          <label for="examType">Exam type:</label>
+          <select id="examType"
+                  ng-model="type"
+                  ng-change="c.setType(type)"
+                  required
+                  value="CSA">
+            <option disabled hidden value style="display:none"></option>
+            <option value="CSA"
+                    selected>CSA</option>
+          </select>
+        </form>
+      </div>
+      <div ng-if="!training">
+        <input type="submit"
+               value="Start"
+               ng-click="c.start(type)"/>
+      </div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="letter" table="x_463716_dlh_answer" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>letter</element>
+            <name>x_463716_dlh_answer</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-09-15 11:29:55</sys_created_on>
+            <sys_id>a436d6e607a23010d44bf16c7c1ed004</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>letter</sys_name>
+            <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+            <sys_update_name>sys_choice_x_463716_dlh_answer_letter</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-09-15 11:29:55</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>letter</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>A</label>
+            <language>en</language>
+            <name>x_463716_dlh_answer</name>
+            <sequence>10</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-09-15 11:29:55</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e836d6e607a23010d44bf16c7c1ed003</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-09-15 11:29:55</sys_updated_on>
+            <value>a</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>letter</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>B</label>
+            <language>en</language>
+            <name>x_463716_dlh_answer</name>
+            <sequence>20</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-09-15 11:29:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f83696e607a23010d44bf16c7c1ed0f5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-09-15 11:29:56</sys_updated_on>
+            <value>b</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>letter</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>C</label>
+            <language>en</language>
+            <name>x_463716_dlh_answer</name>
+            <sequence>30</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-09-15 11:29:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>fc36d6e607a23010d44bf16c7c1ed007</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-09-15 11:29:56</sys_updated_on>
+            <value>c</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>letter</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>D</label>
+            <language>en</language>
+            <name>x_463716_dlh_answer</name>
+            <sequence>40</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-09-15 11:29:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3836d6e607a23010d44bf16c7c1ed012</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-09-15 11:29:56</sys_updated_on>
+            <value>d</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>letter</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>E</label>
+            <language>en</language>
+            <name>x_463716_dlh_answer</name>
+            <sequence>50</sequence>
+            <synonyms/>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-09-15 11:29:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8d36d6e607a23010d44bf16c7c1ed00b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-09-15 11:29:56</sys_updated_on>
+            <value>e</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

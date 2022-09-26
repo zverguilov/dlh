@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="ml_training_request_schedule">
+    <ml_training_request_schedule action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <capability/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time/>
+        <ml_capability_definition display_value="Assessment Questions">f7227f2e0727f010d44bf16c7c1ed0bd</ml_capability_definition>
+        <ml_solution/>
+        <name>Assessment Questions</name>
+        <offset/>
+        <offset_type>0</offset_type>
+        <run_as display_value="Zdravko Verguilov">88ba31af07657010d44bf16c7c1ed01e</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek/>
+        <run_period>1970-01-31 00:00:00</run_period>
+        <run_start>2021-11-04 11:20:44</run_start>
+        <run_time/>
+        <run_type>periodically</run_type>
+        <solution_definition/>
+        <sys_class_name>ml_training_request_schedule</sys_class_name>
+        <sys_created_by>zdravko.verguilov</sys_created_by>
+        <sys_created_on>2021-11-04 11:20:44</sys_created_on>
+        <sys_id>6193bf2e0727f010d44bf16c7c1ed017</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Assessment Questions</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>ml_training_request_schedule_6193bf2e0727f010d44bf16c7c1ed017</sys_update_name>
+        <sys_updated_by>zdravko.verguilov</sys_updated_by>
+        <sys_updated_on>2021-11-04 11:20:44</sys_updated_on>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+    </ml_training_request_schedule>
+</record_update>

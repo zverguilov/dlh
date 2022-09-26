@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Question Instance" max_length="40" name="x_463716_dlh_question_instance" sizeclass="2580" type="collection">
+        <element label="Answer" max_length="1024" name="answer" read_only="true" type="string"/>
+        <element label="Correct" max_length="40" name="correct" read_only="true" type="boolean"/>
+        <element label="Marked" max_length="40" name="marked" type="boolean"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element label="Question" max_length="32" name="question" read_only="true" reference="x_463716_dlh_question" type="reference"/>
+        <element label="Test" max_length="32" name="test" read_only="true" reference="x_463716_dlh_test" type="reference"/>
+        <index name="index">
+            <element name="question"/>
+        </index>
+        <index name="index2">
+            <element name="test"/>
+        </index>
+    </element>
+</database>

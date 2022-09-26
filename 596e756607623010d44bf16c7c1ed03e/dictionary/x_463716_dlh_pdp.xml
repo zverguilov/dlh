@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="all_tables.text_index_translations=true" audit="true" label="PDP" max_length="40" name="x_463716_dlh_pdp" sizeclass="9" type="collection">
+        <element attributes="serializer=com.glide.script.TranslatedTextXMLSerializer" label="Areas of growth" max_length="4000" name="areas_of_growth" type="translated_html"/>
+        <element label="Department" max_length="40" name="department" type="string"/>
+        <element label="Employee" max_length="32" name="employee" reference="sys_user" type="reference"/>
+        <element label="Job Title" max_length="40" name="job_title" type="string"/>
+        <element label="Manager" max_length="32" name="manager" reference="sys_user" type="reference"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="serializer=com.glide.script.TranslatedTextXMLSerializer" label="Personal strengths" max_length="4000" name="personal_strengths" type="translated_html"/>
+        <element attributes="serializer=com.glide.script.TranslatedTextXMLSerializer" label="What could have gone better?" max_length="4000" name="what_could_have_gone_better" type="translated_html"/>
+        <element attributes="serializer=com.glide.script.TranslatedTextXMLSerializer" label="What went well?" max_length="4000" name="what_went_well" type="translated_html"/>
+        <index name="index">
+            <element name="manager"/>
+        </index>
+        <index name="index2">
+            <element name="employee"/>
+        </index>
+    </element>
+</database>

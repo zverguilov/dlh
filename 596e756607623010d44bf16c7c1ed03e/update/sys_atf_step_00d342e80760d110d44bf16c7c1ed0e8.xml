@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Impersonate the user: DIW Employee with user Id: DIW.Employee
+
+Warning: Impersonating an existing user may cause unexpected behavior for this test. Avoid potential issues by adding a 'Create a User' step instead&#13;
+See the documentation for Test Design Considerations</description>
+        <display_name>Impersonate</display_name>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes>Impersonate the employee user.</notes>
+        <order>1</order>
+        <snapshot/>
+        <step_config display_value="Impersonate">071ee5b253331200040729cac2dc348d</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-07-04 11:19:06</sys_created_on>
+        <sys_id>00d342e80760d110d44bf16c7c1ed0e8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Impersonate</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_atf_step_00d342e80760d110d44bf16c7c1ed0e8</sys_update_name>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-07-04 11:19:06</sys_updated_on>
+        <table/>
+        <test display_value="Test PDP initial creation">3e8bd3e307901110d44bf16c7c1ed072</test>
+        <timeout/>
+        <warning_message>Warning: Impersonating an existing user may cause unexpected behavior for this test. Avoid potential issues by adding a 'Create a User' step instead&#13;
+See the documentation for Test Design Considerations</warning_message>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=00d342e80760d110d44bf16c7c1ed0e8"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>00d342e80760d110d44bf16c7c1ed0e8</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>anton.tyagunenko@doitwise.com</sys_created_by>
+        <sys_created_on>2022-07-04 11:19:07</sys_created_on>
+        <sys_id>a5f3c2e80760d110d44bf16c7c1ed0ce</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>anton.tyagunenko@doitwise.com</sys_updated_by>
+        <sys_updated_on>2022-07-04 11:19:07</sys_updated_on>
+        <value>7487dbef07501110d44bf16c7c1ed0e1</value>
+        <variable display_value="User">586e2c4253e0220002c6435723dc3415</variable>
+    </sys_variable_value>
+</record_update>

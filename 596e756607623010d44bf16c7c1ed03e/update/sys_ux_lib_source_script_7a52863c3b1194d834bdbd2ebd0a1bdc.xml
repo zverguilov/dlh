@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_lib_source_script">
+    <sys_ux_lib_source_script action="INSERT_OR_UPDATE">
+        <config_option/>
+        <engine>6</engine>
+        <externals/>
+        <inner_components/>
+        <name>@463716/dlh-page</name>
+        <script><![CDATA[var __TECTONIC__$463716_dlh_page=function(e){var n={};function t(r){if(n[r])return n[r].exports;var o=n[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,t),o.l=!0,o.exports}return t.m=e,t.c=n,t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{enumerable:!0,get:r})},t.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.t=function(e,n){if(1&n&&(e=t(e)),8&n)return e;if(4&n&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(t.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&n&&"string"!=typeof e)for(var o in e)t.d(r,o,function(n){return e[n]}.bind(null,o));return r},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,n){return Object.prototype.hasOwnProperty.call(e,n)},t.p="",t(t.s=7)}([function(e,n){e.exports=__TECTONIC__$servicenow_ui_renderer_snabbdom},function(e,n){e.exports=function(e){var n=[];return n.toString=function(){return this.map(function(n){var t=function(e,n){var t=e[1]||"",r=e[3];if(!r)return t;if(n&&"function"==typeof btoa){var o=function(e){return"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(e))))+" */"}(r),u=r.sources.map(function(e){return"/*# sourceURL="+r.sourceRoot+e+" */"});return[t].concat(u).concat([o]).join("\n")}return[t].join("\n")}(n,e);return n[2]?"@media "+n[2]+"{"+t+"}":t}).join("")},n.i=function(e,t){"string"==typeof e&&(e=[[null,e,""]]);for(var r={},o=0;o<this.length;o++){var u=this[o][0];"number"==typeof u&&(r[u]=!0)}for(o=0;o<e.length;o++){var i=e[o];"number"==typeof i[0]&&r[i[0]]||(t&&!i[2]?i[2]=t:t&&(i[2]="("+i[2]+") and ("+t+")"),n.push(i))}},n}},function(e,n,t){(e.exports=t(1)(!1)).push([e.i,':host{box-sizing:border-box;line-height:var(--now-line-height,1.25);font-family:var(--now-font-family,"Source Sans Pro",sans-serif)}:host([hidden]){display:none}*,:after,:before{box-sizing:border-box}',""])},function(e,n,t){var r=t(2);e.exports="string"==typeof r?r:r.toString()},function(e,n){e.exports=__TECTONIC__$servicenow_ui_core},function(e,n,t){"use strict";t(0);var r=t(0),o=f(r),u=t(4),i=f(t(3));function f(e){return e&&e.__esModule?e:{default:e}}(0,u.createCustomElement)("x-463716-dlh-page",{renderer:{type:o.default},view:function(e,n){n.updateState;return(0,r.createElement)("div",null,"Hello World!")},styles:i.default})},function(e,n,t){"use strict";t(5)},function(e,n,t){e.exports=t(6)}]);]]></script>
+        <script_link/>
+        <sys_class_name>sys_ux_lib_source_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-09-15 13:34:55</sys_created_on>
+        <sys_id>7a52863c3b1194d834bdbd2ebd0a1bdc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>@463716/dlh-page</sys_name>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sys_ux_lib_source_script_7a52863c3b1194d834bdbd2ebd0a1bdc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-09-15 13:34:55</sys_updated_on>
+        <type>script</type>
+    </sys_ux_lib_source_script>
+</record_update>

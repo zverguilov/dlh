@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Test" max_length="40" name="x_463716_dlh_test" sizeclass="171" type="collection">
+        <element label="Assigned to" max_length="32" name="assigned_to" reference="sys_user" type="reference"/>
+        <element choice="1" label="Exam" max_length="4000" name="exam" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="CSA" sequence="0" value="csa"/>
+                <element inactive_on_update="false" label="CAD" sequence="1" value="cad"/>
+            </choice>
+        </element>
+        <element label="Grade" max_length="15" name="grade" read_only="true" type="string"/>
+        <element attributes="edge_encryption_enabled=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element label="Pass" max_length="40" name="pass" read_only="true" type="boolean"/>
+        <element choice="3" default="draft" label="Status" max_length="40" name="status" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Draft" sequence="10" value="draft"/>
+                <element inactive_on_update="false" label="Ongoing" sequence="20" value="ongoing"/>
+                <element inactive_on_update="false" label="Finished" sequence="30" value="finished"/>
+            </choice>
+        </element>
+        <element label="Submitted" max_length="40" name="submitted" read_only="true" type="boolean"/>
+        <element label="Time Finished" max_length="40" name="time_finished" read_only="true" type="glide_date_time"/>
+        <element label="Time Started" max_length="40" name="time_started" read_only="true" type="glide_date_time"/>
+        <index name="index">
+            <element name="assigned_to"/>
+        </index>
+    </element>
+</database>

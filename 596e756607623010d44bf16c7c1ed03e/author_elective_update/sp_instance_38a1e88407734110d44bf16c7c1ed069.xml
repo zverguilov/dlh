@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance">
+    <sp_instance action="DELETE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <glyph/>
+        <id/>
+        <order>2</order>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="1">957b683307670110d44bf16c7c1ed042</sp_column>
+        <sp_widget display_value="My Goals">c63954cc07334110d44bf16c7c1ed0f1</sp_widget>
+        <sys_class_name>sp_instance</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-05-26 08:05:29</sys_created_on>
+        <sys_id>38a1e88407734110d44bf16c7c1ed069</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_update_name>sp_instance_38a1e88407734110d44bf16c7c1ed069</sys_update_name>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-05-26 21:07:18</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters/>
+    </sp_instance>
+    <sys_translated_text action="DELETE" query="documentkey=38a1e88407734110d44bf16c7c1ed069"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="DLH">596e756607623010d44bf16c7c1ed03e</application>
+        <file_path/>
+        <instance_id>1d64aec2db06f3082f68c597059619f0</instance_id>
+        <instance_name>dev87737</instance_name>
+        <name>sp_instance_38a1e88407734110d44bf16c7c1ed069</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance"><sp_instance action="INSERT_OR_UPDATE"><active>true</active><class_name/><color>default</color><css/><glyph/><id/><order>2</order><roles/><short_description/><size>md</size><sp_column display_value="1">957b683307670110d44bf16c7c1ed042</sp_column><sp_widget display_value="My Goals">c63954cc07334110d44bf16c7c1ed0f1</sp_widget><sys_class_name>sp_instance</sys_class_name><sys_created_by>teodora.radeva</sys_created_by><sys_created_on>2022-05-26 08:05:29</sys_created_on><sys_id>38a1e88407734110d44bf16c7c1ed069</sys_id><sys_mod_count>4</sys_mod_count><sys_name/><sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package><sys_policy/><sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope><sys_update_name>sp_instance_38a1e88407734110d44bf16c7c1ed069</sys_update_name><sys_updated_by>teodora.radeva</sys_updated_by><sys_updated_on>2022-05-26 21:07:18</sys_updated_on><title/><url/><widget_parameters/></sp_instance><sys_translated_text action="delete_multiple" query="documentkey=38a1e88407734110d44bf16c7c1ed069"/></record_update>]]></payload>
+        <payload_hash>-822329337</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source>959da94107ee0110d44bf16c7c1ed0fc</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-05-26 21:07:18</sys_created_on>
+        <sys_id>1d949f4c07bb4110d44bf16c7c1ed004</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1810231f9850000001</sys_recorded_at>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-05-26 21:07:18</sys_updated_on>
+        <type>Instance</type>
+        <update_guid>d1949f4c05bb41101686a2c493f79f04</update_guid>
+        <update_guid_history>d1949f4c05bb41101686a2c493f79f04:-822329337,c6731f0c69bb4110d4aa8ecf8482a0e0:468322472,518bb208587b4110e5637c8910dcdc8d:684092468,2c8bf6085e7b4110e7b781e353c9860a:468322472,9f7bb608d97b4110c1ede128c62f82cb:-822329337,a20af2c4487b4110e864bcc7a4c566df:-2112981146,70a1e884b77341102d0b6bd799bb786c:-822329337</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">0f949f4c07bb4110d44bf16c7c1ed07a</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>teodora.radeva</sys_created_by>
+        <sys_created_on>2022-05-26 21:07:26</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance">sp_instance</sys_db_object>
+        <sys_id>8eb51f2134794b94b841fa0a736913c4</sys_id>
+        <sys_metadata>38a1e88407734110d44bf16c7c1ed069</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="DLH" source="x_463716_dlh">596e756607623010d44bf16c7c1ed03e</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="DLH">596e756607623010d44bf16c7c1ed03e</sys_scope>
+        <sys_scope_delete display_value="">011918382f754bdf81628cb5cbdc96c1</sys_scope_delete>
+        <sys_update_name>sp_instance_38a1e88407734110d44bf16c7c1ed069</sys_update_name>
+        <sys_update_version display_value="sp_instance_38a1e88407734110d44bf16c7c1ed069">1d949f4c07bb4110d44bf16c7c1ed004</sys_update_version>
+        <sys_updated_by>teodora.radeva</sys_updated_by>
+        <sys_updated_on>2022-05-26 21:07:26</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
